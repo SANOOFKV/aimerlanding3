@@ -137,13 +137,16 @@
         <div class="relative w-full aspect-[4/5] lg:aspect-square lg:h-[450px] rounded-xl overflow-hidden border border-white/10 bg-white/5 order-first lg:order-last -mt-6 lg:-translate-y-16 transition-transform duration-500">
           <div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 mix-blend-screen"></div>
           <video 
-            autoPlay 
+            autoplay 
             loop 
             muted 
-            playsInline
+            playsinline
+            preload="auto"
             class="w-full h-full object-cover object-center"
-            src="https://aimerbschool.com/wp-content/uploads/2026/03/banner-video.mp4"
-          ></video>
+          >
+            <source src="assets/banner-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
           <div class="absolute inset-0 bg-gradient-to-t from-background via-black/20 to-transparent"></div>
         </div>
       </div>
@@ -390,7 +393,10 @@
           </div>
           <!-- Video container (Hidden initially) -->
           <div id="media-video-container" class="w-full h-full hidden">
-            <video class="w-full h-full object-cover" src="events/youngceovideo.mp4" controls></video>
+            <video class="w-full h-full object-cover" controls preload="metadata">
+              <source src="events/youngceovideo.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -434,10 +440,16 @@
         </div>
         <div class="border border-white/10 rounded-xl overflow-hidden aspect-video md:aspect-[4/3] bg-white/5 relative">
           <video 
-            class="w-full h-full object-cover" 
-            src="https://aimerbschool.com/wp-content/uploads/2025/02/MKC-720p.mp4" 
-            autoPlay loop muted playsInline
-          ></video>
+            autoplay 
+            loop 
+            muted 
+            playsinline
+            preload="auto"
+            class="w-full h-full object-cover"
+          >
+            <source src="assets/curriculum-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
           <div class="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none"></div>
         </div>
       </div>
