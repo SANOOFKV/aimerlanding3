@@ -81,7 +81,7 @@ function init() {
       if (popupSubmitBtn) popupSubmitBtn.textContent = 'Download Brochure';
     } else {
       if (popupTitle) popupTitle.textContent = 'Apply for UGBIP';
-      if (popupSubmitBtn) popupSubmitBtn.textContent = 'Apply Now';
+      if (popupSubmitBtn) popupSubmitBtn.textContent = 'Talk To Our Team';
     }
     
     if (popupOverlay) {
@@ -311,7 +311,7 @@ function init() {
         if (submitBtn.id === 'lead-popup-submit-btn') {
           submitBtn.textContent = currentIntent === 'brochure' ? 'Download Brochure' : 'Talk To Our Team';
         } else {
-          submitBtn.textContent = 'Apply Now';
+          submitBtn.textContent = 'Talk To Our Team';
         }
       }
     });
