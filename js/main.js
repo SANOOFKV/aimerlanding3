@@ -80,7 +80,7 @@ function init() {
       if (popupTitle) popupTitle.textContent = 'Download Brochure';
       if (popupSubmitBtn) popupSubmitBtn.textContent = 'Download Brochure';
     } else {
-      if (popupTitle) popupTitle.textContent = 'Apply for UGBIP';
+      if (popupTitle) popupTitle.textContent = 'Take the next step';
       if (popupSubmitBtn) popupSubmitBtn.textContent = 'Talk To Our Team';
     }
     
