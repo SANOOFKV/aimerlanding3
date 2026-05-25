@@ -1,13 +1,1261 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIMER Business School - Under Graduate Business Integrated Program (UGBIP)</title>
+  <meta name="description" content="India's first Business Integrated Program at AIMER Business School. Learn business by doing business — through real projects, internships, and global exposure.">
+  <meta name="keywords" content="AIMER, Business School, UGBIP, Business Integrated Program, Kerala, Calicut, Experiential Learning, MBA, BBA">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0E3339',
+            primary: '#008BA5',
+            accent: '#CEF3E4',
+            'dark-teal': '#004D5B',
+            'dark-navy': '#101A23',
+            'light-grey': '#F6F6F6',
+            'light-teal': '#E6F4F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16883887094"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16883887094');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wqva0spc1g");
+  </script>
+</head>
+<body class="bg-background text-white font-sans antialiased min-h-screen">
+
+  <!-- Header Navigation -->
+  <header class="bg-background/90 backdrop-blur-md text-white fixed top-0 w-full z-50 border-b border-white/10">
+    <div class="flex justify-between items-center max-w-[1280px] mx-auto px-6 py-4">
+      <div class="flex items-center gap-2">
+        <a href="./">
+          <img src="https://aimerbschool.com/wp-content/uploads/2026/04/AIMER-New-Logo-1-1-1.svg" alt="AIMER Business School" class="h-8" />
+        </a>
+      </div>
+      <nav class="hidden md:flex gap-8 items-center">
+        <a class="text-white/80 font-medium hover:text-accent transition-colors duration-300" href="#curriculum">Programs</a>
+        <a class="text-white/80 font-medium hover:text-accent transition-colors duration-300" href="#outcomes">Outcomes</a>
+        <a class="text-white/80 font-medium hover:text-accent transition-colors duration-300" href="#campus">Campus</a>
+        <a class="text-white/80 font-medium hover:text-accent transition-colors duration-300" href="#apply-now-section">Admissions</a>
+      </nav>
+      <button 
+        class="bg-primary hover:bg-primary/80 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,139,165,0.4)] text-white px-6 py-2 rounded-lg font-semibold transition-all duration-300 trigger-popup"
+        data-intent="apply"
+      >
+        Apply Now
+      </button>
+    </div>
+  </header>
+
+  <main class="pt-[90px] overflow-hidden">
+    
+    <!-- Hero Section -->
+    <section class="min-h-[800px] flex flex-col justify-center px-6 md:px-20 max-w-[1280px] mx-auto py-20 relative fade-in-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="flex flex-col items-start gap-8 z-10 w-full">
+          <span class="bg-accent text-background px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">
+            Admissions Open · Batch 2026
+          </span>
+          <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter leading-[1.1]">
+            India's <span class="text-primary block">first</span> Business Integrated Program
+          </h1>
+          <p class="text-white/80 text-xl max-w-xl">
+            Learn business by doing business — through real projects, internships, and global exposure.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-2">
+            <button class="bg-primary hover:bg-primary/80 hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(0,139,165,0.4)] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 flex items-center gap-2 trigger-popup" data-intent="apply">
+              Apply Now <span class="text-xl leading-none">→</span>
+            </button>
+            <button class="border border-white/20 hover:bg-white/10 hover:-translate-y-1 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 trigger-popup" data-intent="brochure">
+              Download Brochure
+            </button>
+          </div>
+          
+          <div class="flex flex-col gap-8 mt-8 lg:mt-12 w-full pt-8 lg:pt-10 border-t border-white/10">
+            <div>
+              <p class="text-white/60 text-sm font-semibold mb-4 uppercase tracking-wider">Backed by corporates from:</p>
+              <div class="flex gap-8 items-center flex-wrap">
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/kims-healthcare-1.svg" class="h-6 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="KIMS Healthcare" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/capkon-logo-01-01-1.svg" class="h-7 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Capkon" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Elance_Logo-1.svg" class="h-6 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Elance" />
+                <img src="assets/images/regenerated_image_1779174557713.svg" class="h-8 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Vodafone Idea" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Tata_logo-1.svg" class="h-7 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Tata" />
+              </div>
+            </div>
+            <div>
+              <p class="text-white/60 text-sm font-semibold mb-4 uppercase tracking-wider">Faculty from:</p>
+              <div class="flex gap-8 items-center flex-wrap">
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com1.svg" class="h-8 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Faculty 1" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com2.svg" class="h-8 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Faculty 2" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com3.svg" class="h-8 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Faculty 3" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com4.svg" class="h-8 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Faculty 4" />
+                <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com5-1.svg" class="h-8 object-contain brightness-0 invert opacity-80 hover:opacity-100 hover:scale-105 transition-all duration-300" alt="Faculty 5" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative w-full aspect-[4/5] lg:aspect-auto lg:h-[800px] rounded-2xl overflow-hidden border border-white/10 bg-white/5 order-first lg:order-last -mt-12 lg:-translate-y-32 transition-transform duration-500">
+          <div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 mix-blend-screen"></div>
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            className="w-full h-full object-cover object-center"
+            src="https://aimerbschool.com/wp-content/uploads/2026/03/banner-video.mp4"
+          ></video>
+          <div class="absolute inset-0 bg-gradient-to-t from-background via-black/20 to-transparent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program Info Card -->
+    <section class="px-6 md:px-20 max-w-[1280px] mx-auto mb-20 relative z-20 fade-in-on-scroll">
+      <div class="bg-dark-teal border border-white/10 rounded-2xl p-8 lg:p-10 shadow-2xl flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-white/10">
+          <div>
+            <span class="text-accent text-sm font-semibold uppercase tracking-wider mb-2 block">UGBIP</span>
+            <h2 class="text-2xl lg:text-3xl font-bold">Under Graduate Business Integrated Program</h2>
+          </div>
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-white/10 px-4 py-2 rounded-full text-sm font-medium border border-white/5">75% Practical</span>
+            <span class="bg-white/10 px-4 py-2 rounded-full text-sm font-medium border border-white/5">2 Internships</span>
+            <span class="bg-white/10 px-4 py-2 rounded-full text-sm font-medium border border-white/5">Global Immersion</span>
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+              <i data-lucide="calendar" class="w-6 h-6 text-accent"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">Duration</span>
+              <span class="font-bold text-lg">3 Years</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+              <i data-lucide="clock" class="w-6 h-6 text-accent"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">Format</span>
+              <span class="font-bold text-lg">Full-Time</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+              <i data-lucide="map-pin" class="w-6 h-6 text-accent"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">Location</span>
+              <span class="font-bold text-lg">Calicut, Kerala</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center shrink-0">
+              <i data-lucide="award" class="w-6 h-6 text-accent"></i>
+            </div>
+            <div class="flex flex-col">
+              <span class="text-white/60 text-xs font-semibold uppercase tracking-wider">Intake</span>
+              <span class="font-bold text-lg">Limited Seats</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex justify-end pt-4">
+           <a href="#curriculum" class="text-primary font-semibold flex items-center gap-2 hover:text-accent transition-colors hover:gap-3 ease-out duration-300">
+             Explore Programme <span class="text-xl leading-none">→</span>
+           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Supporters / Industry Leaders -->
+    <section class="px-6 md:px-20 max-w-[1280px] mx-auto py-24 mt-8 border-t border-white/10 fade-in-on-scroll">
+      <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+        <div class="max-w-2xl">
+          <span class="text-accent text-sm font-semibold uppercase tracking-widest block mb-4">Network For Success</span>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight">Industry Leaders & Mentors</h2>
+          <p class="mt-6 text-white/70 text-lg leading-relaxed max-w-xl">
+            Learn directly from top industry executives, entrepreneurs, and global leaders who guide your experiential journey.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Mentor 1 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative bg-white/5">
+            <img 
+              src="mentors/sriram.jpg" 
+              alt="Sriram P" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Sriram P</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Chief Strategist-DEI, AVTAR</p>
+        </div>
+        <!-- Mentor 2 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative bg-white/5">
+            <img 
+              src="mentors/rahul.jpg" 
+              alt="Rahul Raghav" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Rahul Raghav</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">COO, Interval Learning Platform</p>
+        </div>
+        <!-- Mentor 3 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative bg-white/5">
+            <img 
+              src="mentors/sharique.jpg" 
+              alt="Sharique Samsudheen" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Sharique Samsudheen</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Founder, Fundfolio</p>
+        </div>
+        <!-- Mentor 4 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative bg-white/5">
+            <img 
+              src="mentors/shameer.jpg" 
+              alt="Shameer S" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Shameer S</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Founder, By The Startups</p>
+        </div>
+        <!-- Mentor 5 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative bg-white/5">
+            <img 
+              src="mentors/sayish.jpg" 
+              alt="Sayish CV" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Sayish CV</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">AGM, Vodafone Idea</p>
+        </div>
+        <!-- Mentor 6 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative bg-white/5">
+            <img 
+              src="mentors/rupesh.jpg" 
+              alt="Rupesh Tiwari" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+              onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400'"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Rupesh Tiwari</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Head of Sales</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quote Strip -->
+    <section class="w-full bg-dark-teal py-24 border-y border-white/10 relative overflow-hidden fade-in-on-scroll">
+      <div class="absolute inset-0 bg-primary/10 blur-[100px] -z-10 mix-blend-screen"></div>
+      <div class="max-w-[1000px] mx-auto px-6 text-center flex flex-col items-center z-10 relative">
+        <i data-lucide="quote" class="w-12 h-12 text-accent mb-8 opacity-80"></i>
+        <h2 class="text-3xl md:text-5xl font-bold leading-tight mb-8">
+          "The internships and management challenges gave me confidence to step into the industry before graduation."
+        </h2>
+        <div class="flex flex-col items-center gap-1 mb-16">
+          <p class="font-bold text-lg">AIMER Student · Batch 1</p>
+          <p class="text-accent text-sm font-semibold tracking-wider uppercase">UGBIP Graduate</p>
+        </div>
+        
+        <div class="flex gap-8 md:gap-12 items-center flex-wrap justify-center">
+          <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com1.svg" class="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300" alt="Institution" />
+          <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com2.svg" class="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300" alt="Institution" />
+          <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com3.svg" class="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300" alt="Institution" />
+          <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com4.svg" class="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300" alt="Institution" />
+          <img src="https://aimerbschool.com/wp-content/uploads/2026/03/fac-com5-1.svg" class="h-8 md:h-10 object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-all duration-300" alt="Institution" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Outcomes Stats Bar -->
+    <section id="outcomes" class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 fade-in-on-scroll">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div class="flex flex-col items-center text-center">
+          <span class="text-4xl md:text-5xl font-extrabold text-accent mb-2">75%</span>
+          <span class="text-white/80 font-medium">Experiential learning</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <span class="text-4xl md:text-5xl font-extrabold text-accent mb-2">2×6</span>
+          <span class="text-white/80 font-medium">Month internships</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <span class="text-4xl md:text-5xl font-extrabold text-accent mb-2">100+</span>
+          <span class="text-white/80 font-medium">Industry mentors</span>
+        </div>
+        <div class="flex flex-col items-center text-center">
+          <span class="text-4xl md:text-5xl font-extrabold text-accent mb-2">70+</span>
+          <span class="text-white/80 font-medium">Corporate partners</span>
+        </div>
+      </div>
+      <div class="flex justify-center gap-4 flex-wrap">
+         <button class="bg-primary hover:bg-primary/80 hover:-translate-y-1 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 trigger-popup" data-intent="apply">
+           Learn More
+         </button>
+         <button class="border border-white/20 hover:bg-white/10 hover:-translate-y-1 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 trigger-popup" data-intent="brochure">
+           Download Brochure
+         </button>
+      </div>
+    </section>
+
+    <!-- Media Strip (Upcoming Event) -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-20 pb-20 fade-in-on-scroll">
+      <div class="border border-primary/30 rounded-2xl p-8 bg-gradient-to-br from-primary/10 to-transparent flex flex-col md:flex-row items-center gap-8 justify-between hover:border-primary/50 transition-all duration-300">
+        <div class="flex-1">
+          <span class="bg-accent text-background px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">Upcoming Event</span>
+          <h3 class="text-3xl font-bold mb-4">AIMER Young CEO — Shape the Next Generation of Leaders</h3>
+          <p class="text-white/80 mb-6 font-medium">May 9–10, 2026 · For 12th grade students</p>
+          <a href="https://youngceo.aimerbschool.com" target="_blank" rel="noreferrer" class="text-accent font-bold flex items-center gap-2 hover:gap-3 transition-all cursor-pointer w-fit uppercase tracking-wider text-sm">
+            Register Now <i data-lucide="external-link" class="w-4 h-4"></i>
+          </a>
+        </div>
+        <!-- Video Trigger Container -->
+        <div class="w-full md:w-[400px] h-60 bg-black/40 rounded-xl overflow-hidden border border-white/10 flex items-center justify-center relative group cursor-pointer">
+          <!-- Preview container -->
+          <div id="media-preview-container" class="absolute inset-0 flex items-center justify-center z-10">
+            <img src="events/youngceo.png" alt="Event preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-60" />
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="w-14 h-14 bg-accent/90 rounded-full flex items-center justify-center pl-1 group-hover:scale-110 transition-transform duration-300 shadow-xl shadow-accent/20">
+                <svg class="w-6 h-6 text-black" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Video container (Hidden initially) -->
+          <div id="media-video-container" class="w-full h-full hidden">
+            <video class="w-full h-full object-cover" src="events/youngceovideo.mp4" controls></video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curriculum Section & Program Details -->
+    <section id="curriculum" class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 border-t border-white/10 fade-in-on-scroll">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div class="flex flex-col gap-6">
+          <span class="text-accent text-sm font-semibold uppercase tracking-widest block">Program details</span>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Undergraduate Business Integrated Program</h2>
+          <ul class="flex flex-col gap-6">
+            <li class="flex gap-4 items-center">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                <i data-lucide="calendar" class="w-5 h-5 text-accent"></i>
+              </div>
+              <span class="text-lg font-medium">3 Years · 6 Semesters</span>
+            </li>
+            <li class="flex gap-4 items-center">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                <i data-lucide="clock" class="w-5 h-5 text-accent"></i>
+              </div>
+              <span class="text-lg font-medium">Full-Time, Offline</span>
+            </li>
+            <li class="flex gap-4 items-center">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                <i data-lucide="calendar" class="w-5 h-5 text-accent"></i>
+              </div>
+              <span class="text-lg font-medium">Aug 2026 Intake</span>
+            </li>
+            <li class="flex gap-4 items-center">
+              <div class="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+              </div>
+              <span class="text-lg font-medium">Markaz Knowledge City, Kozhikode, Kerala</span>
+            </li>
+          </ul>
+          <button class="bg-primary hover:bg-primary/80 hover:-translate-y-1 text-white px-8 py-4 rounded-lg font-semibold w-fit transition-all duration-300 mt-4 trigger-popup" data-intent="apply">
+            Apply Now
+          </button>
+        </div>
+        <div class="border border-white/10 rounded-2xl overflow-hidden aspect-video md:aspect-square bg-white/5 relative">
+          <video 
+            class="w-full h-full object-cover" 
+            src="https://aimerbschool.com/wp-content/uploads/2025/02/MKC-720p.mp4" 
+            autoPlay loop muted playsInline
+          ></video>
+          <div class="absolute inset-0 bg-primary/10 mix-blend-overlay pointer-events-none"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faculty Section -->
+    <section id="faculty" class="max-w-[1280px] mx-auto px-6 md:px-20 py-24 border-t border-white/10 fade-in-on-scroll">
+      <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+        <div class="max-w-2xl">
+          <span class="text-accent text-sm font-semibold uppercase tracking-widest block mb-4">Learn From The Best</span>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight">World-Class Faculty</h2>
+          <p class="mt-6 text-white/70 text-lg leading-relaxed max-w-xl">
+            Our faculty brings decades of industry experience, global academic excellence, and visionary leadership to the classroom.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
+        <!-- Faculty 1 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&q=80&w=400&h=400" 
+              alt="Dr. A. P. J. Abdul Kalam (Late)" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Dr. A. P. J. Abdul Kalam (Late)</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Former President of India, Distinguished Professor</p>
+        </div>
+        <!-- Faculty 2 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400&h=400" 
+              alt="Prof. Raghuram Rajan" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Prof. Raghuram Rajan</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Former Governor of RBI, Professor of Finance</p>
+        </div>
+        <!-- Faculty 3 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400" 
+              alt="Dr. Kiran Mazumdar-Shaw" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Dr. Kiran Mazumdar-Shaw</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Founder, Biocon, Mentor in Residence</p>
+        </div>
+        <!-- Faculty 4 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400&h=400" 
+              alt="Mr. Ratan Tata" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Mr. Ratan Tata</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Chairman Emeritus, Tata Sons, Visionary Leader</p>
+        </div>
+        <!-- Faculty 5 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&q=80&w=400&h=400" 
+              alt="Indra Nooyi" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">Indra Nooyi</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Former Chairperson & CEO of PepsiCo</p>
+        </div>
+        <!-- Faculty 6 -->
+        <div class="group relative bg-white/5 border border-white/10 p-4 sm:p-6 rounded-2xl hover:bg-white/10 hover:-translate-y-2 hover:border-white/20 transition-all duration-300">
+          <div class="w-full aspect-[4/5] overflow-hidden rounded-xl mb-4 sm:mb-6 relative">
+            <img 
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400&h=400" 
+              alt="N. R. Narayana Murthy" 
+              class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 mt-auto to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-300"></div>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">N. R. Narayana Murthy</h3>
+          <p class="text-white/60 text-xs sm:text-sm font-medium">Co-founder, Infosys, Tech Visionary</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbered Features (The AIMER Difference) -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 border-t border-white/10 fade-in-on-scroll">
+      <span class="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">The AIMER difference</span>
+      <h2 class="text-4xl md:text-5xl font-bold mb-16">Built for the real world</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <!-- Feature 1 -->
+        <div class="flex flex-col group cursor-pointer border border-white/10 rounded-2xl bg-white/5 overflow-hidden hover:-translate-y-2 hover:bg-white/10 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/internship2.jpg" alt="New-age academics" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-6 text-2xl md:text-4xl font-black text-white/20 group-hover:text-primary transition-colors">01</span>
+          </div>
+          <div class="p-6 md:pt-2 flex-1 flex flex-col">
+            <h3 class="text-base md:text-xl font-bold mb-2 md:mb-3 group-hover:text-accent transition-colors">New-age academics</h3>
+            <p class="text-white/60 leading-relaxed text-xs md:text-sm flex-1">Industry-integrated curriculum blending business foundations with real-world application across 6 semesters.</p>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="flex flex-col group cursor-pointer border border-white/10 rounded-2xl bg-white/5 overflow-hidden hover:-translate-y-2 hover:bg-white/10 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Sriram-P.png" alt="Learn from industry leaders" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-6 text-2xl md:text-4xl font-black text-white/20 group-hover:text-primary transition-colors">02</span>
+          </div>
+          <div class="p-6 md:pt-2 flex-1 flex flex-col">
+            <h3 class="text-base md:text-xl font-bold mb-2 md:mb-3 group-hover:text-accent transition-colors">Learn from industry leaders</h3>
+            <p class="text-white/60 leading-relaxed text-xs md:text-sm flex-1">100+ mentors, founders, and CXOs teach live on campus — real stories, real access.</p>
+          </div>
+        </div>
+        <!-- Feature 3 -->
+        <div class="flex flex-col group cursor-pointer border border-white/10 rounded-2xl bg-white/5 overflow-hidden hover:-translate-y-2 hover:bg-white/10 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/visit2.jpg" alt="Global immersion" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-6 text-2xl md:text-4xl font-black text-white/20 group-hover:text-primary transition-colors">03</span>
+          </div>
+          <div class="p-6 md:pt-2 flex-1 flex flex-col">
+            <h3 class="text-base md:text-xl font-bold mb-2 md:mb-3 group-hover:text-accent transition-colors">Global immersion</h3>
+            <p class="text-white/60 leading-relaxed text-xs md:text-sm flex-1">Exposure across UAE, Singapore, Malaysia, Vietnam, China & Saudi Arabia in structured international learning tours.</p>
+          </div>
+        </div>
+        <!-- Feature 4 -->
+        <div class="flex flex-col group cursor-pointer border border-white/10 rounded-2xl bg-white/5 overflow-hidden hover:-translate-y-2 hover:bg-white/10 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Zyno.jpg" alt="Startup readiness" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-6 text-2xl md:text-4xl font-black text-white/20 group-hover:text-primary transition-colors">04</span>
+          </div>
+          <div class="p-6 md:pt-2 flex-1 flex flex-col">
+            <h3 class="text-base md:text-xl font-bold mb-2 md:mb-3 group-hover:text-accent transition-colors">Startup readiness</h3>
+            <p class="text-white/60 leading-relaxed text-xs md:text-sm flex-1">From ideation to investor pitch — live management challenges, incubator access, and mentorship throughout.</p>
+          </div>
+        </div>
+        <!-- Feature 5 -->
+        <div class="flex flex-col group cursor-pointer border border-white/10 rounded-2xl bg-white/5 overflow-hidden hover:-translate-y-2 hover:bg-white/10 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/visit1.jpg" alt="Industry bootcamps" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-6 text-2xl md:text-4xl font-black text-white/20 group-hover:text-primary transition-colors">05</span>
+          </div>
+          <div class="p-6 md:pt-2 flex-1 flex flex-col">
+            <h3 class="text-base md:text-xl font-bold mb-2 md:mb-3 group-hover:text-accent transition-colors">Industry bootcamps</h3>
+            <p class="text-white/60 leading-relaxed text-xs md:text-sm flex-1">Intensive practitioner-led sprints across analytics, marketing, finance, consulting, operations, and AI tools.</p>
+          </div>
+        </div>
+        <!-- Feature 6 -->
+        <div class="flex flex-col group cursor-pointer border border-white/10 rounded-2xl bg-white/5 overflow-hidden hover:-translate-y-2 hover:bg-white/10 transition-all duration-300">
+          <div class="h-48 overflow-hidden relative">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/success1.jpg" alt="Career preparation" class="w-full h-full object-cover opacity-80 group-hover:scale-105 group-hover:opacity-100 transition-all duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-90"></div>
+            <span class="absolute bottom-4 left-6 text-2xl md:text-4xl font-black text-white/20 group-hover:text-primary transition-colors">06</span>
+          </div>
+          <div class="p-6 md:pt-2 flex-1 flex flex-col">
+            <h3 class="text-base md:text-xl font-bold mb-2 md:mb-3 group-hover:text-accent transition-colors">Career preparation</h3>
+            <p class="text-white/60 leading-relaxed text-xs md:text-sm flex-1">Structured placement support, interview readiness, and direct access to 70+ corporate partners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Campus Life Carousel -->
+    <section id="campus" class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 border-t border-white/10 fade-in-on-scroll">
+      <div class="flex flex-col flex-wrap md:flex-row justify-between items-end mb-12 gap-6">
+        <div>
+          <span class="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">Campus life</span>
+          <h2 class="text-4xl md:text-5xl font-bold">More than a classroom</h2>
+        </div>
+        <button class="text-primary font-semibold flex items-center gap-2 hover:text-accent transition-all hover:gap-3 ease-out shrink-0 text-lg trigger-popup" data-intent="apply">
+          Explore More <span>→</span>
+        </button>
+      </div>
+      
+      <!-- Scrollable carousel -->
+      <div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x scroll-smooth">
+        <!-- Slide 1 -->
+        <div class="min-w-[320px] md:min-w-[420px] aspect-[4/5] md:aspect-square relative rounded-2xl overflow-hidden border border-white/10 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="https://ugbip.aimerbschool.com/images/flex1-1-1.jpg" alt="Achievement Ceremony" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+          <div class="relative p-8 z-10">
+            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-md">ON CAMPUS</span>
+            <h3 class="text-2xl font-bold mb-3">Achievement Ceremony</h3>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="min-w-[320px] md:min-w-[420px] aspect-[4/5] md:aspect-square relative rounded-2xl overflow-hidden border border-white/10 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="https://ugbip.aimerbschool.com/images/flex2-2-1.jpg" alt="Football Tournament" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+          <div class="relative p-8 z-10">
+            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-md">CAMPUS LIFE</span>
+            <h3 class="text-2xl font-bold mb-3">Football Tournament</h3>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="min-w-[320px] md:min-w-[420px] aspect-[4/5] md:aspect-square relative rounded-2xl overflow-hidden border border-white/10 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="https://ugbip.aimerbschool.com/images/flex3-1.jpg" alt="Community Outing" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+          <div class="relative p-8 z-10">
+            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-md">CAMPUS LIFE</span>
+            <h3 class="text-2xl font-bold mb-3">Community Outing</h3>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="min-w-[320px] md:min-w-[420px] aspect-[4/5] md:aspect-square relative rounded-2xl overflow-hidden border border-white/10 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="https://aimerbschool.com/wp-content/uploads/2026/03/success1.jpg" alt="Annual Startup Hackathon" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+          <div class="relative p-8 z-10">
+            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-md">EVENT</span>
+            <h3 class="text-2xl font-bold mb-3">Annual Startup Hackathon</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-3">A 48-hour intensive hackathon where students build functional prototypes and pitch to angel investors.</p>
+          </div>
+        </div>
+        <!-- Slide 5 -->
+        <div class="min-w-[320px] md:min-w-[420px] aspect-[4/5] md:aspect-square relative rounded-2xl overflow-hidden border border-white/10 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
+          <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="https://aimerbschool.com/wp-content/uploads/2026/03/success2.jpg" alt="Women in Leadership" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+          <div class="relative p-8 z-10">
+            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-4 inline-block backdrop-blur-md">PROGRAM</span>
+            <h3 class="text-2xl font-bold mb-3">Women in Leadership</h3>
+            <p class="text-white/80 text-sm leading-relaxed line-clamp-3">A dedicated program fostering female entrepreneurship with exclusive mentorship and networking opportunities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Academics (Lighter section) -->
+    <section class="w-full bg-light-grey text-background py-24 border-y border-black/10 fade-in-on-scroll">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-20">
+        <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-16">
+          <div class="max-w-xl">
+            <span class="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Learning model</span>
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight text-background">India's first experiential learning campus</h2>
+          </div>
+          <button class="bg-background hover:bg-background/80 hover:-translate-y-1 text-white px-8 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all duration-300 trigger-popup" data-intent="brochure">
+            Download Brochure <i data-lucide="download" class="w-4 h-4"></i>
+          </button>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white border border-black/10 p-8 rounded-2xl shadow-xl shadow-black/5 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+              <i data-lucide="book-open" class="w-6 h-6 text-primary"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">75% practical learning</h3>
+            <p class="text-background/70 leading-relaxed font-medium">Master the fundamentals through live case studies, business simulations, and continuous problem-solving instead of rote memorization.</p>
+          </div>
+          <div class="bg-white border border-black/10 p-8 rounded-2xl shadow-xl shadow-black/5 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+              <i data-lucide="brain" class="w-6 h-6 text-primary"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Build & run companies</h3>
+            <p class="text-background/70 leading-relaxed font-medium">You don't just study business, you build one. Work on live ventures, make real revenue, and learn from actual market feedback.</p>
+          </div>
+          <div class="bg-white border border-black/10 p-8 rounded-2xl shadow-xl shadow-black/5 hover:-translate-y-2 transition-all duration-300">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+              <i data-lucide="badge-check" class="w-6 h-6 text-primary"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4">Direct corporate access</h3>
+            <p class="text-background/70 leading-relaxed font-medium">Weekly mentorship from CXOs, shadowing programs, and deep integrations with industry leaders from day one.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Founders Mentorship Section -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 border-t border-white/10 fade-in-on-scroll">
+      <h2 class="text-4xl md:text-5xl font-bold mb-4">Get mentored by founders</h2>
+      <p class="text-white/80 text-lg mb-12">Weekly sessions with CEOs, continuous 1:1 guidance.</p>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
+        <!-- Card 1 -->
+        <div class="border border-white/10 rounded-2xl p-6 sm:p-10 bg-white/5 hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+          <h3 class="text-xl md:text-2xl font-bold mb-4">Guest Lecture Series</h3>
+          <p class="text-white/80 mb-8 text-sm md:text-base max-w-sm leading-relaxed flex-1">Weekly intimate sessions with CEOs, CTOs, and founders who share unvarnished truths about building companies.</p>
+          <div class="flex gap-4 flex-wrap mt-auto">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Sriram-P.png" alt="Mentor" class="w-12 h-12 md:w-14 md:h-14 object-cover rounded-full border border-white/20 shadow-lg" />
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Rahul-Raghav.png" alt="Mentor" class="w-12 h-12 md:w-14 md:h-14 object-cover rounded-full border border-white/20 shadow-lg" />
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Sharique-Samsudheen.png" alt="Mentor" class="w-12 h-12 md:w-14 md:h-14 object-cover rounded-full border border-white/20 shadow-lg" />
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="border border-white/10 rounded-2xl p-6 sm:p-10 bg-primary/20 bg-gradient-to-br from-primary/30 to-transparent hover:-translate-y-1 transition-transform duration-300 relative overflow-hidden flex flex-col items-start">
+          <h3 class="text-xl md:text-2xl font-bold mb-4 text-white">1:1 Mentorship</h3>
+          <p class="text-white/90 mb-8 text-sm md:text-base max-w-sm leading-relaxed font-medium flex-1">Get paired with an industry veteran who acts as your personal board member throughout the program.</p>
+          <button class="bg-white text-primary px-6 py-3 rounded-lg font-bold hover:bg-white/90 transition-all duration-300 shadow-xl mt-auto trigger-popup" data-intent="apply">
+            Meet Mentors
+          </button>
+        </div>
+        <!-- Card 3 -->
+        <div class="border border-white/10 rounded-2xl p-6 sm:p-10 bg-white/5 hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+          <h3 class="text-xl md:text-2xl font-bold mb-4">Office Hours</h3>
+          <p class="text-white/80 text-sm md:text-base leading-relaxed max-w-sm mt-auto">Direct access to faculty and investors for specific problem-solving and strategy sessions.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="border border-white/10 rounded-2xl p-6 sm:p-10 bg-white/5 hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+          <h3 class="text-xl md:text-2xl font-bold mb-4">Founder Retreats</h3>
+          <p class="text-white/80 text-sm md:text-base leading-relaxed max-w-sm mt-auto">Off-site immersive weekends focused on leadership development and deep networking.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Industry Projects -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 border-t border-white/10 fade-in-on-scroll">
+      <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+        <div class="max-w-2xl">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Management challenges</h2>
+          <p class="text-white/80 text-lg">As part of AIMER's learning model, students build and run real businesses on campus.</p>
+        </div>
+        <button class="bg-primary hover:bg-primary/80 hover:-translate-y-1 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shrink-0 trigger-popup" data-intent="apply">
+          Apply Now
+        </button>
+      </div>
+      
+      <!-- Scrollable Projects list -->
+      <div class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x">
+        <!-- Project 1 -->
+        <div class="min-w-[320px] md:min-w-[420px] border border-white/10 rounded-2xl bg-white/5 overflow-hidden group snap-start flex flex-col hover:bg-white/10 transition-all duration-300">
+          <div class="h-56 overflow-hidden">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/Zyno.jpg" alt="Zyno" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <span class="text-accent text-sm font-bold uppercase tracking-widest mb-3">Student Built</span>
+            <h3 class="font-bold text-2xl mb-4">Zyno</h3>
+            <p class="text-sm text-white/60 mb-6 leading-relaxed flex-1">ZYNO is a growing apparel brand focused on fitness wear, custom t-shirts, and quality uniforms — built from scratch through real student experience.</p>
+            <div class="pt-4 border-t border-white/10">
+              <span class="block text-xs uppercase tracking-wider text-white/40 mb-2 font-semibold">Outcome</span>
+              <p class="text-sm font-medium">Students managed brand, ops, and sales end to end.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="min-w-[320px] md:min-w-[420px] border border-white/10 rounded-2xl bg-white/5 overflow-hidden group snap-start flex flex-col hover:bg-white/10 transition-all duration-300">
+          <div class="h-56 overflow-hidden">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/zordar.jpeg" alt="Zordar" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <span class="text-accent text-sm font-bold uppercase tracking-widest mb-3">Student Built</span>
+            <h3 class="font-bold text-2xl mb-4">Zordar</h3>
+            <p class="text-sm text-white/60 mb-6 leading-relaxed flex-1">A creative gifting startup specializing in customized miniature keychains and "Mini Me" products — designed for celebrations and individual personalities.</p>
+            <div class="pt-4 border-t border-white/10">
+              <span class="block text-xs uppercase tracking-wider text-white/40 mb-2 font-semibold">Outcome</span>
+              <p class="text-sm font-medium">Students built the brand identity, product line, and customer pipeline.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="min-w-[320px] md:min-w-[420px] border border-white/10 rounded-2xl bg-white/5 overflow-hidden group snap-start flex flex-col hover:bg-white/10 transition-all duration-300">
+          <div class="h-56 overflow-hidden">
+            <img src="https://aimerbschool.com/wp-content/uploads/2026/03/shekit.jpg" alt="She Kit" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-8 flex flex-col flex-1">
+            <span class="text-accent text-sm font-bold uppercase tracking-widest mb-3">Student Built</span>
+            <h3 class="font-bold text-2xl mb-4">She Kit</h3>
+            <p class="text-sm text-white/60 mb-6 leading-relaxed flex-1">A thoughtfully curated period-care gift hamper brand created to make women feel supported and valued during their menstrual days.</p>
+            <div class="pt-4 border-t border-white/10">
+              <span class="block text-xs uppercase tracking-wider text-white/40 mb-2 font-semibold">Outcome</span>
+              <p class="text-sm font-medium">Students defined the mission, product, and go-to-market strategy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Readiness Bootcamps -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-20 py-20 border-t border-white/10 fade-in-on-scroll">
+      <div class="flex justify-between flex-wrap gap-8 mb-16 items-start">
+        <div class="max-w-xl">
+          <span class="text-accent text-sm font-semibold uppercase tracking-widest mb-4 block">Industry skills</span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">Industry readiness bootcamps</h2>
+          <p class="text-white/80 text-lg">Intensive sprints guided by practitioners in today's fast-moving industries.</p>
+        </div>
+        <button class="bg-primary hover:bg-primary/80 hover:-translate-y-1 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 trigger-popup" data-intent="apply">
+          Apply Now
+        </button>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+          <span class="text-4xl font-extrabold text-accent mb-2">06</span>
+          <span class="text-sm text-white/60 uppercase tracking-wider font-semibold">Bootcamp tracks</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+          <span class="text-4xl font-extrabold text-accent mb-2">75%</span>
+          <span class="text-sm text-white/60 uppercase tracking-wider font-semibold">Practical curriculum</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+          <span class="text-4xl font-extrabold text-accent mb-2">100+</span>
+          <span class="text-sm text-white/60 uppercase tracking-wider font-semibold">Industry mentors</span>
+        </div>
+        <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+          <span class="text-4xl font-extrabold text-accent mb-2">2</span>
+          <span class="text-sm text-white/60 uppercase tracking-wider font-semibold">Live internships</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Track 1 -->
+        <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-default group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Business Analytics</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Data interpretation, dashboards & decision-making</p>
+        </div>
+        <!-- Track 2 -->
+        <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-default group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Digital Marketing & Growth</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Campaign strategy, performance marketing & brand building</p>
+        </div>
+        <!-- Track 3 -->
+        <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-default group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Consulting & Strategy</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Case cracking, frameworks & presentation mastery</p>
+        </div>
+        <!-- Track 4 -->
+        <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-default group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Finance & Valuation</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Financial modelling, valuation & investment basics</p>
+        </div>
+        <!-- Track 5 -->
+        <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-default group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">Operations Excellence</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Process design, supply chain & operational strategy</p>
+        </div>
+        <!-- Track 6 -->
+        <div class="p-8 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:border-primary/30 transition-all cursor-default group">
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">AI & Business Tools</h3>
+          <p class="text-white/60 text-sm leading-relaxed">AI-powered productivity for modern business</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Startup Readiness / Incubator -->
+    <section class="max-w-[1280px] mx-auto px-6 md:px-20 py-24 border-t border-white/10 fade-in-on-scroll">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Transition to a founder</h2>
+        <p class="text-white/80 text-lg max-w-2xl mx-auto">From day one, you are treated as a founder. Transition seamlessly from student to entrepreneur with our dedicated incubator resources.</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Item 1 -->
+        <div class="flex flex-col items-center text-center p-10 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:-translate-y-2 hover:border-primary/30 transition-all duration-300">
+          <div class="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-8">
+            <i data-lucide="building-2" class="w-10 h-10 text-accent"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Free Workspace</h3>
+          <p class="text-white/70 leading-relaxed font-medium">Keep your dedicated desk in our innovation hub for 6 months post-graduation.</p>
+        </div>
+        <!-- Item 2 -->
+        <div class="flex flex-col items-center text-center p-10 border border-white/10 rounded-2xl bg-white/5 hover:bg-white/10 hover:-translate-y-2 hover:border-primary/30 transition-all duration-300">
+          <div class="w-20 h-20 rounded-2xl bg-primary/20 flex items-center justify-center mb-8">
+            <i data-lucide="wallet" class="w-10 h-10 text-accent"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Legal & Cloud Credits</h3>
+          <p class="text-white/70 leading-relaxed font-medium">Over $100k in AWS credits and pro-bono legal setup for your corporation.</p>
+        </div>
+        <!-- Item 3 -->
+        <div class="flex flex-col items-center text-center p-10 border border-white/10 rounded-2xl bg-primary/20 hover:-translate-y-2 transition-all duration-300 relative overflow-hidden group">
+          <div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+          <div class="relative z-10 flex flex-col items-center w-full">
+            <div class="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <i data-lucide="rocket" class="w-10 h-10 text-white"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-4 text-white">Demo Day</h3>
+            <p class="text-white/90 leading-relaxed font-medium">A guaranteed spot to pitch your venture to a room of 50+ vetted angel investors.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Immersion -->
+    <section class="w-full bg-light-teal text-background py-24 border-y border-black/10 overflow-hidden fade-in-on-scroll">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-20">
+        <span class="text-primary text-sm font-bold uppercase tracking-widest mb-4 block">Global exposure</span>
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 text-background">Learn across borders</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-white border border-black/10 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-all">
+              <h4 class="font-bold text-xl mb-3 text-background">UAE Region</h4>
+              <p class="text-background/70 font-medium">Immerse in the business landscape of Dubai and Abu Dhabi.</p>
+            </div>
+            <div class="bg-white border border-black/10 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-all">
+              <h4 class="font-bold text-xl mb-3 text-background">Malaysia & Singapore</h4>
+              <p class="text-background/70 font-medium">Explore the booming tech and finance ecosystems in Southeast Asia.</p>
+            </div>
+            <div class="bg-white border border-black/10 p-8 rounded-2xl shadow-lg hover:-translate-y-1 transition-all">
+              <h4 class="font-bold text-xl mb-3 text-background">Vietnam & China</h4>
+              <p class="text-background/70 font-medium">Understand rapid manufacturing scale and emerging Asian markets.</p>
+            </div>
+            <div class="bg-primary text-white border border-primary p-8 rounded-2xl flex flex-col items-center justify-center shadow-lg transform sm:scale-105">
+              <span class="font-black text-2xl text-center mb-2">Included</span>
+              <span class="font-medium text-center text-white/90">in Tuition Fees</span>
+            </div>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-4 h-full">
+            <img class="w-full h-full object-cover rounded-2xl border border-black/10 hover:scale-[1.02] transition-transform duration-500 shadow-xl" src="https://aimerbschool.com/wp-content/uploads/2026/03/visit2.jpg" alt="Global Immersion UAE" />
+            <img class="w-full h-full object-cover rounded-2xl border border-black/10 hover:scale-[1.02] transition-transform duration-500 shadow-xl" src="https://aimerbschool.com/wp-content/uploads/2026/03/visit1.jpg" alt="Global Immersion Asia" />
+            <div class="col-span-2 overflow-hidden rounded-2xl border border-black/10 shadow-xl hover:scale-[1.02] transition-transform duration-500">
+              <img class="w-full h-full object-cover" src="https://ugbip.aimerbschool.com/images/flex3-1.jpg" alt="Global Immersion Group" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA & Admissions Form Section (Reconstructed from Aimer-Landing) -->
+    <section id="apply-now-section" class="w-full py-24 bg-dark-teal border-b border-white/10 fade-in-on-scroll">
+      <div class="max-w-[1280px] mx-auto px-6 md:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="bg-accent text-background px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest inline-block mb-6">Admissions Open</span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Unlock your business future today</h2>
+          <p class="text-white/80 text-lg mb-8 leading-relaxed">
+            Take the first step towards building a real-world career or starting your own venture. Register for the Under Graduate Business Integrated Program (UGBIP).
+          </p>
+          <div class="flex flex-col gap-4 text-white/60">
+            <p class="font-medium text-white">AIMER Business School Campus</p>
+            <p>Markaz Knowledge City, Kozhikode, Kerala — 673 580</p>
+            <p class="mt-2">📞 +91 74 500 30 600</p>
+            <p>✉️ admissions@aimerbschool.com</p>
+          </div>
+        </div>
+
+        <!-- Form Box -->
+        <div class="bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl">
+          <h3 class="text-2xl font-bold mb-6 text-white border-b border-white/10 pb-4">Application Form</h3>
+          <form class="space-y-4" noValidate>
+            <div>
+              <label for="name" class="block text-sm font-medium text-white/80 mb-1">Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name"
+                class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                placeholder="Your full name"
+              />
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium text-white/80 mb-1">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email"
+                class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <div>
+              <label for="phone" class="block text-sm font-medium text-white/80 mb-1">Phone Number</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+                placeholder="+91 00000 00000"
+              />
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label for="status" class="block text-sm font-medium text-white/80 mb-1">Status</label>
+                <select 
+                  id="status" 
+                  name="status"
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none"
+                >
+                  <option value="" disabled selected>Select status</option>
+                  <option value="student">Student</option>
+                  <option value="professional">Professional</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="state" class="block text-sm font-medium text-white/80 mb-1">State</label>
+                <select 
+                  id="state" 
+                  name="state"
+                  class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none"
+                >
+                  <option value="" disabled selected>Select state</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                  <option value="Assam">Assam</option>
+                  <option value="Bihar">Bihar</option>
+                  <option value="Chhattisgarh">Chhattisgarh</option>
+                  <option value="Goa">Goa</option>
+                  <option value="Gujarat">Gujarat</option>
+                  <option value="Haryana">Haryana</option>
+                  <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  <option value="Jharkhand">Jharkhand</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Madhya Pradesh">Madhya Pradesh</option>
+                  <option value="Maharashtra">Maharashtra</option>
+                  <option value="Manipur">Manipur</option>
+                  <option value="Meghalaya">Meghalaya</option>
+                  <option value="Mizoram">Mizoram</option>
+                  <option value="Nagaland">Nagaland</option>
+                  <option value="Odisha">Odisha</option>
+                  <option value="Punjab">Punjab</option>
+                  <option value="Rajasthan">Rajasthan</option>
+                  <option value="Sikkim">Sikkim</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Tripura">Tripura</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh</option>
+                  <option value="Uttarakhand">Uttarakhand</option>
+                  <option value="West Bengal">West Bengal</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="goal" class="block text-sm font-medium text-white/80 mb-1">Goal (Optional)</label>
+              <textarea 
+                id="goal" 
+                name="goal"
+                rows="2"
+                class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+                placeholder="What do you want to achieve?"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/95 hover:scale-[1.01] active:scale-[0.99] transition-all mt-6 shadow-lg shadow-primary/20"
+            >
+              Apply Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-navy text-white w-full border-t border-white/10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-[1280px] mx-auto px-6 md:px-20 py-16">
+      <div class="col-span-1 flex flex-col gap-4">
+        <div class="flex items-center gap-2 mb-2">
+          <i data-lucide="graduation-cap" class="w-6 h-6 text-accent fill-accent"></i>
+          <span class="font-bold text-xl tracking-tighter">AIMER</span>
+        </div>
+        <p class="text-white/60 text-sm mb-2">Empowering the next generation of business leaders and founders.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" aria-label="LinkedIn" class="text-white/60 hover:text-accent hover:-translate-y-1 transition-all duration-300"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+          <a href="#" aria-label="Twitter" class="text-white/60 hover:text-accent hover:-translate-y-1 transition-all duration-300"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+          <a href="#" aria-label="Facebook" class="text-white/60 hover:text-accent hover:-translate-y-1 transition-all duration-300"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="font-bold mb-2">Academics</h4>
+        <a class="text-white/60 text-sm hover:text-accent transition-colors duration-300" href="#curriculum">Curriculum</a>
+        <a class="text-white/60 text-sm hover:text-accent transition-colors duration-300" href="#faculty">Faculty & Mentors</a>
+        <a class="text-white/60 text-sm hover:text-accent transition-colors duration-300" href="#curriculum">Global Immersion</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="font-bold mb-2">Admissions</h4>
+        <a class="text-white/60 text-sm hover:text-accent transition-colors duration-300" href="#apply-now-section">Requirements</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button
+    id="back-to-top-btn"
+    class="fixed bottom-8 right-8 bg-primary hover:bg-primary/80 text-white p-3 rounded-full shadow-[0_0_20px_rgba(0,139,165,0.4)] transition-all duration-300 z-50 hover:-translate-y-1 opacity-0 translate-y-10 pointer-events-none"
+    aria-label="Back to top"
+  >
+    <i data-lucide="arrow-up" class="w-6 h-6"></i>
+  </button>
+
+  <!-- Lead Form Popup Modal -->
+  <div id="lead-popup-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+    <div id="lead-popup-box" class="relative w-full max-w-md bg-zinc-900 border border-white/10 rounded-2xl p-6 md:p-8 shadow-2xl">
+      <button
+        id="lead-popup-close"
+        class="absolute top-4 right-4 text-white/50 hover:text-white transition-colors"
+        aria-label="Close"
+      >
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+
+      <h3 id="lead-popup-title" class="text-2xl font-bold mb-2">Take the next step</h3>
+      <p class="text-white/60 text-sm mb-6">
+        Fill out the form below to get more details about our admissions process.
+      </p>
+
+      <form class="space-y-4" noValidate>
+        <div>
+          <label for="popup-name" class="block text-sm font-medium text-white/80 mb-1">Name</label>
+          <input 
+            type="text" 
+            id="popup-name" 
+            name="name"
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+            placeholder="Your full name"
+          />
+        </div>
+        
+        <div>
+          <label for="popup-email" class="block text-sm font-medium text-white/80 mb-1">Email</label>
+          <input 
+            type="email" 
+            id="popup-email" 
+            name="email"
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+            placeholder="you@example.com"
+          />
+        </div>
+
+        <div>
+          <label for="popup-phone" class="block text-sm font-medium text-white/80 mb-1">Phone Number</label>
+          <input 
+            type="tel" 
+            id="popup-phone" 
+            name="phone"
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all"
+            placeholder="+91 00000 00000"
+          />
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label for="popup-status" class="block text-sm font-medium text-white/80 mb-1">Status</label>
+            <select 
+              id="popup-status" 
+              name="status"
+              class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none"
+            >
+              <option value="" disabled selected>Select status</option>
+              <option value="student">Student</option>
+              <option value="professional">Professional</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div>
+            <label for="popup-state" class="block text-sm font-medium text-white/80 mb-1">State</label>
+            <select 
+              id="popup-state" 
+              name="state"
+              class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all appearance-none"
+            >
+              <option value="" disabled selected>Select state</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Madhya Pradesh">Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="popup-goal" class="block text-sm font-medium text-white/80 mb-1">Goal (Optional)</label>
+          <textarea 
+            id="popup-goal" 
+            name="goal"
+            rows="2"
+            class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none"
+            placeholder="What do you want to achieve?"
+          ></textarea>
+        </div>
+
+        <button 
+          id="lead-popup-submit-btn"
+          type="submit" 
+          class="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/90 hover:scale-[1.02] transition-all mt-4"
+        >
+          Talk To Our Team
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

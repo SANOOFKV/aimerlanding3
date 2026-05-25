@@ -1,0 +1,52 @@
+/* Custom styles for AIMER Landing Page */
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: rgba(0, 139, 165, 0.3);
+  color: inherit;
+}
+
+/* Hide scrollbar for carousels */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scroll Animation classes (mimicking framer-motion AnimatedSection) */
+.fade-in-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-on-scroll.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal Popup Transition */
+#lead-popup-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+#lead-popup-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#lead-popup-box {
+  transform: scale(0.95);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#lead-popup-overlay.show #lead-popup-box {
+  transform: scale(1);
+}
