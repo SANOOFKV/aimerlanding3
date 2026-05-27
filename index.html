@@ -136,19 +136,23 @@
             </div>
           </div>
         </div>
-        <div class="relative w-full aspect-[4/5] lg:aspect-square lg:h-[450px] rounded-xl overflow-hidden border border-slate-200 bg-slate-50 order-first lg:order-last -mt-6 lg:-translate-y-16 transition-transform duration-500">
-          <div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 mix-blend-multiply"></div>
-          <video 
-            autoplay 
-            loop 
-            muted 
-            playsinline
-            preload="auto"
-            class="w-full h-full object-cover object-center"
-          >
-            <source src="assets/banner-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <!-- Outer Studio Frame Wrapper -->
+        <div class="relative w-full aspect-[4/5] lg:aspect-square lg:h-[450px] p-2.5 bg-slate-100/60 border border-slate-200/80 rounded-2xl shadow-2xl order-first lg:order-last -mt-6 lg:-translate-y-16 transition-transform duration-500 hover:scale-[1.01] hover:shadow-primary/5">
+          <div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 mix-blend-multiply pointer-events-none"></div>
+          <!-- Inner Video Player -->
+          <div class="w-full h-full rounded-xl overflow-hidden border border-slate-200 bg-white relative">
+            <video 
+              autoplay 
+              loop 
+              muted 
+              playsinline
+              preload="auto"
+              class="w-full h-full object-cover object-center"
+            >
+              <source src="assets/banner-video.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </section>
