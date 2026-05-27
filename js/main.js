@@ -11,46 +11,48 @@ function init() {
     const delayIncrement = 0.03;
     
     const parts = [
-      { text: "India's ", isBlock: false },
+      { text: "India's", isBlock: false },
       { text: "first", isBlock: true },
-      { text: " Business Integrated Program", isBlock: false }
+      { text: "Business Integrated Program", isBlock: false }
     ];
     
     heroTitle.innerHTML = '';
-    parts.forEach(part => {
+    
+    parts.forEach((part, partIndex) => {
+      const words = part.text.split(' ');
+      
+      let container = heroTitle;
       if (part.isBlock) {
-        const spanBlock = document.createElement('span');
-        spanBlock.className = 'text-primary block';
+        container = document.createElement('span');
+        container.className = 'text-primary block';
+        heroTitle.appendChild(container);
+      }
+      
+      words.forEach((word, wordIndex) => {
+        if (!word) return;
         
-        for (let i = 0; i < part.text.length; i++) {
-          const char = part.text[i];
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'inline-block whitespace-nowrap';
+        
+        for (let i = 0; i < word.length; i++) {
+          const char = word[i];
           const span = document.createElement('span');
           span.className = 'inline-block animate__animated animate__fadeInLeft';
           span.style.animationDelay = `${delay}s`;
           span.style.animationFillMode = 'both';
           span.textContent = char;
-          spanBlock.appendChild(span);
+          wordSpan.appendChild(span);
           delay += delayIncrement;
         }
-        heroTitle.appendChild(spanBlock);
-      } else {
-        const fragment = document.createDocumentFragment();
-        for (let i = 0; i < part.text.length; i++) {
-          const char = part.text[i];
-          if (char === ' ') {
-            fragment.appendChild(document.createTextNode(' '));
-          } else {
-            const span = document.createElement('span');
-            span.className = 'inline-block animate__animated animate__fadeInLeft';
-            span.style.animationDelay = `${delay}s`;
-            span.style.animationFillMode = 'both';
-            span.textContent = char;
-            fragment.appendChild(span);
-            delay += delayIncrement;
-          }
+        
+        container.appendChild(wordSpan);
+        
+        const isLastWordOfPart = wordIndex === words.length - 1;
+        const isLastPart = partIndex === parts.length - 1;
+        if (!isLastWordOfPart || !isLastPart) {
+          container.appendChild(document.createTextNode(' '));
         }
-        heroTitle.appendChild(fragment);
-      }
+      });
     });
   }
 
