@@ -446,47 +446,6 @@ function init() {
     });
   }
 
-  // ─── Campus Life Carousel Auto Scroll ────────────────────────────────────
-  const carousel = document.getElementById('campus-carousel');
-  if (carousel) {
-    let scrollInterval;
-    const scrollDelay = 3500; // 3.5 seconds
-    
-    function startAutoScroll() {
-      scrollInterval = setInterval(() => {
-        if (!carousel.firstElementChild) return;
-        const cardWidth = carousel.firstElementChild.getBoundingClientRect().width;
-        const gap = 24; // gap-6 is 24px
-        const step = cardWidth + gap;
-        
-        let newScrollLeft = carousel.scrollLeft + step;
-        
-        // Wrap back to start if we reach the end
-        if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 10) {
-          newScrollLeft = 0;
-        }
-        
-        carousel.scrollTo({
-          left: newScrollLeft,
-          behavior: 'smooth'
-        });
-      }, scrollDelay);
-    }
-    
-    function stopAutoScroll() {
-      if (scrollInterval) {
-        clearInterval(scrollInterval);
-      }
-    }
-    
-    startAutoScroll();
-    
-    // Pause auto scroll when user interacts with the carousel
-    carousel.addEventListener('mouseenter', stopAutoScroll);
-    carousel.addEventListener('mouseleave', startAutoScroll);
-    carousel.addEventListener('touchstart', stopAutoScroll, { passive: true });
-    carousel.addEventListener('touchend', startAutoScroll, { passive: true });
-  }
 }
 
 if (document.readyState === 'loading') {

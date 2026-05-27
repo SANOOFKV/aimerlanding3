@@ -666,37 +666,40 @@
         </button>
       </div>
       
-      <!-- Scrollable carousel -->
-      <div id="campus-carousel" class="flex gap-6 overflow-x-auto hide-scrollbar pb-8 snap-x scroll-smooth">
+      <!-- 3x2 Grid layout -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Slide 1 -->
-        <div class="min-w-[280px] md:min-w-[340px] aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
+        <div class="aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
           <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="assets/images/flex1-1-1.jpg" alt="Achievement Ceremony" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
           <div class="relative p-5 md:p-6 z-10">
             <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block backdrop-blur-md">ON CAMPUS</span>
             <h3 class="text-lg md:text-xl font-bold mb-2">Achievement Ceremony</h3>
+            <p class="text-white/80 text-xs leading-relaxed line-clamp-3">A grand celebration recognizing academic excellence, leadership accomplishments, and milestone student projects.</p>
           </div>
         </div>
         <!-- Slide 2 -->
-        <div class="min-w-[280px] md:min-w-[340px] aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
+        <div class="aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
           <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="assets/images/flex2-2-1.jpg" alt="Football Tournament" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
           <div class="relative p-5 md:p-6 z-10">
             <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block backdrop-blur-md">CAMPUS LIFE</span>
             <h3 class="text-lg md:text-xl font-bold mb-2">Football Tournament</h3>
+            <p class="text-white/80 text-xs leading-relaxed line-clamp-3">Intensive inter-house sports events promoting physical fitness, strategic teamwork, and competitive campus spirit.</p>
           </div>
         </div>
         <!-- Slide 3 -->
-        <div class="min-w-[280px] md:min-w-[340px] aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
+        <div class="aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
           <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="assets/images/flex3-1.jpg" alt="Community Outing" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
           <div class="relative p-5 md:p-6 z-10">
             <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block backdrop-blur-md">CAMPUS LIFE</span>
             <h3 class="text-lg md:text-xl font-bold mb-2">Community Outing</h3>
+            <p class="text-white/80 text-xs leading-relaxed line-clamp-3">Off-campus bonding retreats, wilderness treks, and community activities to build lifelong student relationships.</p>
           </div>
         </div>
         <!-- Slide 4 -->
-        <div class="min-w-[280px] md:min-w-[340px] aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
+        <div class="aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
           <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="assets/images/success1.jpg" alt="Annual Startup Hackathon" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
           <div class="relative p-5 md:p-6 z-10">
@@ -706,13 +709,23 @@
           </div>
         </div>
         <!-- Slide 5 -->
-        <div class="min-w-[280px] md:min-w-[340px] aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer snap-start flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
+        <div class="aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
           <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="assets/images/success2.jpg" alt="Women in Leadership" />
           <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
           <div class="relative p-5 md:p-6 z-10">
             <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block backdrop-blur-md">PROGRAM</span>
             <h3 class="text-lg md:text-xl font-bold mb-2">Women in Leadership</h3>
             <p class="text-white/80 text-xs leading-relaxed line-clamp-3">A dedicated program fostering female entrepreneurship with exclusive mentorship and networking opportunities.</p>
+          </div>
+        </div>
+        <!-- Slide 6 (Dummy) -->
+        <div class="aspect-[4/5] md:aspect-[4/3] relative rounded-xl overflow-hidden border border-slate-200/80 group cursor-pointer flex flex-col justify-end bg-black hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 text-white">
+          <img class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-40 group-hover:scale-105 transition-all duration-700" src="assets/images/visit1.jpg" alt="Global Study Tour" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-80"></div>
+          <div class="relative p-5 md:p-6 z-10">
+            <span class="bg-primary/20 text-primary border border-primary/30 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 inline-block backdrop-blur-md">GLOBAL TOUR</span>
+            <h3 class="text-lg md:text-xl font-bold mb-2">Global Study Tour</h3>
+            <p class="text-white/80 text-xs leading-relaxed line-clamp-3">International corporate visits and cultural immersion tours in major financial hubs like Dubai and Singapore.</p>
           </div>
         </div>
       </div>
