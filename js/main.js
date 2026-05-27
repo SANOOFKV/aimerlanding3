@@ -4,6 +4,56 @@ function init() {
     window.lucide.createIcons();
   }
 
+  // ─── Hero Title Letter Animation ─────────────────────────────────────────
+  const heroTitle = document.getElementById('hero-title');
+  if (heroTitle) {
+    let delay = 0.02;
+    const delayIncrement = 0.03;
+    
+    const parts = [
+      { text: "India's ", isBlock: false },
+      { text: "first", isBlock: true },
+      { text: " Business Integrated Program", isBlock: false }
+    ];
+    
+    heroTitle.innerHTML = '';
+    parts.forEach(part => {
+      if (part.isBlock) {
+        const spanBlock = document.createElement('span');
+        spanBlock.className = 'text-primary block';
+        
+        for (let i = 0; i < part.text.length; i++) {
+          const char = part.text[i];
+          const span = document.createElement('span');
+          span.className = 'inline-block animate__animated animate__fadeInLeft';
+          span.style.animationDelay = `${delay}s`;
+          span.style.animationFillMode = 'both';
+          span.textContent = char;
+          spanBlock.appendChild(span);
+          delay += delayIncrement;
+        }
+        heroTitle.appendChild(spanBlock);
+      } else {
+        const fragment = document.createDocumentFragment();
+        for (let i = 0; i < part.text.length; i++) {
+          const char = part.text[i];
+          if (char === ' ') {
+            fragment.appendChild(document.createTextNode(' '));
+          } else {
+            const span = document.createElement('span');
+            span.className = 'inline-block animate__animated animate__fadeInLeft';
+            span.style.animationDelay = `${delay}s`;
+            span.style.animationFillMode = 'both';
+            span.textContent = char;
+            fragment.appendChild(span);
+            delay += delayIncrement;
+          }
+        }
+        heroTitle.appendChild(fragment);
+      }
+    });
+  }
+
   // ─── LeadSquared Config ───────────────────────────────────────────────────
   const LSQ_URL = 'https://api-in21.leadsquared.com/v2/LeadManagement.svc/Lead.Create?accessKey=u$r0f83abac5915f1175344c491a1481e4a&secretKey=e23030c4b0cc1edc251ad61ce5340a9f6499c21d';
 
