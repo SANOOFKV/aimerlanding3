@@ -136,11 +136,17 @@
             </div>
           </div>
         </div>
-        <!-- Outer Glowing Gradient Border Wrapper -->
-        <div class="relative w-full aspect-[4/5] lg:aspect-square lg:h-[450px] p-[3px] bg-gradient-to-tr from-primary to-accent rounded-2xl shadow-xl order-first lg:order-last -mt-6 lg:-translate-y-16 transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl hover:shadow-primary/20">
-          <div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 mix-blend-multiply pointer-events-none"></div>
+        <!-- Outer Browser Mockup Wrapper -->
+        <div class="relative w-full aspect-[4/5] lg:aspect-square lg:h-[450px] border border-slate-200 rounded-2xl overflow-hidden bg-slate-50 shadow-2xl order-first lg:order-last -mt-6 lg:-translate-y-16 transition-all duration-500 hover:scale-[1.01] hover:shadow-primary/5 flex flex-col">
+          <div class="absolute inset-0 bg-primary/5 blur-[100px] -z-10 mix-blend-multiply pointer-events-none"></div>
+          <!-- Browser Title Bar -->
+          <div class="h-8 bg-slate-100/80 border-b border-slate-200/80 flex items-center px-4 gap-1.5 shrink-0 z-10">
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+          </div>
           <!-- Inner Video Player -->
-          <div class="w-full h-full rounded-xl overflow-hidden bg-white relative">
+          <div class="flex-1 relative overflow-hidden bg-white">
             <video 
               autoplay 
               loop 
