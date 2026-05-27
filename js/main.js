@@ -1,8 +1,13 @@
 function init() {
-  // Initialize Lucide icons
-  if (window.lucide) {
-    window.lucide.createIcons();
+  // Initialize Lucide icons (deferred load — retry until available)
+  function initLucide() {
+    if (window.lucide) {
+      window.lucide.createIcons();
+    } else {
+      setTimeout(initLucide, 100);
+    }
   }
+  initLucide();
 
   // ─── Hero Title Letter Animation ─────────────────────────────────────────
   const heroTitle = document.getElementById('hero-title');
@@ -105,11 +110,31 @@ function init() {
   let popupShown = false;
   let currentIntent = 'apply'; // 'apply' or 'brochure'
 
-  // Trigger popup automatically on scroll (once per session)
+  // Consolidated scroll handler (single listener for popup + back-to-top)
+  const backToTopBtn = document.getElementById('back-to-top-btn');
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400 && !popupShown) {
-      popupShown = true;
-      openPopup('apply');
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        // Auto-show popup on scroll (once per session)
+        if (scrollY > 400 && !popupShown) {
+          popupShown = true;
+          openPopup('apply');
+        }
+        // Back to top button visibility
+        if (backToTopBtn) {
+          if (scrollY > 500) {
+            backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+          } else {
+            backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   }, { passive: true });
 
@@ -425,19 +450,8 @@ function init() {
     });
   }
 
-  // ─── Back to Top Button ─────────────────────────────────────────────────
-  const backToTopBtn = document.getElementById('back-to-top-btn');
+  // ─── Back to Top Button (click handler only — scroll handled above) ────
   if (backToTopBtn) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 500) {
-        backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
-        backToTopBtn.classList.add('opacity-100', 'translate-y-0');
-      } else {
-        backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
-        backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
-      }
-    }, { passive: true });
-
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({
         top: 0,
