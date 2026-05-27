@@ -10,6 +10,7 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "sharp": "^0.34.5",
     "terser": "^5.48.0",
     "vite": "^6.2.3"
   }
