@@ -32,12 +32,14 @@ function init() {
         if (!word) return;
         
         const wordSpan = document.createElement('span');
-        wordSpan.className = 'inline-block whitespace-nowrap';
+        wordSpan.style.display = 'inline-block';
+        wordSpan.style.whiteSpace = 'nowrap';
         
         for (let i = 0; i < word.length; i++) {
           const char = word[i];
           const span = document.createElement('span');
           span.className = 'inline-block animate__animated animate__fadeInLeft';
+          span.style.display = 'inline-block';
           span.style.animationDelay = `${delay}s`;
           span.style.animationFillMode = 'both';
           span.textContent = char;
