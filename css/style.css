@@ -74,7 +74,3 @@ html {
   border-radius: 4px;
 }
 
-/* Bottom padding for sticky mobile CTA bar */
-@media (max-width: 767px) {
-  footer { padding-bottom: 72px !important; }
-}
