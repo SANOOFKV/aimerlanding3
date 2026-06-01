@@ -147,7 +147,18 @@ function init() {
         }
         // Back to top button visibility
         if (backToTopBtn) {
-          if (scrollY > 500) {
+          const isMobile = window.innerWidth < 768;
+          // Show when scrolled near bottom (e.g. within 300px of the bottom)
+          const isAtFooter = (scrollY + window.innerHeight) >= (document.documentElement.scrollHeight - 300);
+          
+          let shouldShow = false;
+          if (isMobile) {
+            shouldShow = isAtFooter;
+          } else {
+            shouldShow = scrollY > 500;
+          }
+
+          if (shouldShow) {
             backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
             backToTopBtn.classList.add('opacity-100', 'translate-y-0');
           } else {
