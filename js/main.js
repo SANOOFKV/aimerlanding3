@@ -110,14 +110,20 @@ function init() {
   let popupShown = false;
   let currentIntent = 'apply'; // 'apply' or 'brochure'
 
-  // Consolidated scroll handler (single listener for popup + back-to-top)
+  // Consolidated scroll handler (single listener for popup + back-to-top + scroll-spy)
   const backToTopBtn = document.getElementById('back-to-top-btn');
+  const navLinks = document.querySelectorAll('.nav-link[data-section]');
+  const navSections = Array.from(navLinks).map(link => ({
+    link,
+    section: document.getElementById(link.dataset.section)
+  })).filter(item => item.section);
+
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        // Auto-show popup on scroll (once per session, after 60% scroll depth)
+        // Auto-show popup on scroll (once per session, after 20% scroll depth)
         const scrollDepth = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         if (scrollDepth > 0.2 && !popupShown) {
           popupShown = true;
@@ -133,6 +139,15 @@ function init() {
             backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
           }
         }
+        // Scroll-spy: highlight active nav link
+        let activeId = '';
+        for (const { link, section } of navSections) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 150) activeId = link.dataset.section;
+        }
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.dataset.section === activeId);
+        });
         ticking = false;
       });
       ticking = true;
