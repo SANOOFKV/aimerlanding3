@@ -119,7 +119,7 @@ function init() {
         const scrollY = window.scrollY;
         // Auto-show popup on scroll (once per session, after 60% scroll depth)
         const scrollDepth = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        if (scrollDepth > 0.3 && !popupShown) {
+        if (scrollDepth > 0.2 && !popupShown) {
           popupShown = true;
           openPopup('apply');
         }
