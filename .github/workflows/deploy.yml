@@ -35,6 +35,10 @@ jobs:
       - name: Build
         run: npx vite build
         
+      - name: Create Redirect
+        run: |
+          echo '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/ugprogram/"></head><body>Redirecting to <a href="/ugprogram/">/ugprogram/</a>...</body></html>' > dist/index.html
+          
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
