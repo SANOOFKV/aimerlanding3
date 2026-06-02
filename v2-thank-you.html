@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - AIMER Business School</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0E3339',
+            primary: '#008BA5',
+            accent: '#CEF3E4',
+            'dark-teal': '#004D5B',
+            'dark-navy': '#101A23',
+            'light-grey': '#F6F6F6',
+            'light-teal': '#E6F4F6',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16883887094"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-16883887094');
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x0nu3nv0q4");
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '26459103610459072');
+  fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+<body class="bg-background text-white font-sans min-h-full flex flex-col justify-between antialiased">
+  <!-- Meta Pixel Code (Noscript Fallback) -->
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=26459103610459072&ev=PageView&noscript=1"
+  /></noscript>
+
+  <!-- Header -->
+  <header class="bg-background/90 backdrop-blur-md text-white border-b border-white/10 w-full">
+    <div class="flex justify-between items-center max-w-[1280px] mx-auto px-6 py-4">
+      <div class="flex items-center gap-2">
+        <img src="https://aimerbschool.com/wp-content/uploads/2026/04/AIMER-New-Logo-1-1-1.svg" alt="AIMER Business School" class="h-8" />
+      </div>
+    </div>
+  </header>
+
+  <!-- Thank You Content -->
+  <main class="flex-1 flex items-center justify-center p-6 my-12">
+    <div class="max-w-md w-full bg-zinc-900 border border-white/10 rounded-2xl p-8 md:p-10 shadow-2xl text-center flex flex-col items-center">
+      <div class="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center mb-6">
+        <i data-lucide="check-circle" class="w-10 h-10 text-accent"></i>
+      </div>
+      
+      <h1 class="text-3xl font-extrabold mb-4 tracking-tight">Thank You!</h1>
+      <p class="text-white/70 mb-8 leading-relaxed">
+        Your submission has been received successfully. Our admissions team will be in touch with you shortly to guide you through the next steps.
+      </p>
+
+      <div id="download-message" class="hidden w-full bg-primary/10 border border-primary/20 text-primary p-4 rounded-xl mb-8 flex items-center justify-center gap-2 animate-pulse">
+        <i data-lucide="download" class="w-5 h-5"></i>
+        <span class="font-semibold text-sm">Your brochure is downloading automatically...</span>
+      </div>
+
+      <a href="./" class="w-full bg-primary text-white font-semibold py-3 px-4 rounded-lg hover:bg-primary/80 transition-all shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 duration-300">
+        Return to Home
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark-navy text-white border-t border-white/10 w-full">
+    <div class="flex flex-col sm:flex-row justify-between items-center max-w-[1280px] mx-auto px-6 py-8 gap-4">
+      <span class="text-white/60 text-sm">© 2026 AIMER Business School. All rights reserved.</span>
+      <span class="text-white/60 text-sm">corporate@aimerbschool.com · +91 74 500 30 800</span>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide
+      if (window.lucide) {
+        window.lucide.createIcons();
+      }
+
+      // Check if we need to auto-download the brochure
+      const urlParams = new URLSearchParams(window.location.search);
+      if (urlParams.get('download') === 'true') {
+        const downloadMsg = document.getElementById('download-message');
+        if (downloadMsg) {
+          downloadMsg.classList.remove('hidden');
+        }
+
+        setTimeout(() => {
+          const link = document.createElement('a');
+          link.href = 'UGBIP-Brochures.pdf';
+          link.download = 'UGBIP_Brochures.pdf';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }, 1000); // 1 second delay
+      }
+    });
+  </script>
+</body>
+</html>
