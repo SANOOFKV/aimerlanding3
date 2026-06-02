@@ -357,6 +357,8 @@ function init() {
       });
 
       if (res.ok) {
+        btnEl.textContent = 'Redirecting...';
+        btnEl.style.backgroundColor = '#33A2B7';
         handleSuccess(isBrochureDownload);
       } else {
         const text = await res.text();
@@ -370,6 +372,8 @@ function init() {
 
         if (isDuplicate) {
           console.log('Duplicate lead detected. Proceeding to thank you page.');
+          btnEl.textContent = 'Redirecting...';
+          btnEl.style.backgroundColor = '#33A2B7';
           handleSuccess(isBrochureDownload);
         } else {
           console.error('CRM error response:', text);
@@ -389,60 +393,11 @@ function init() {
   }
 
   function handleSuccess(isBrochureDownload) {
-    const formView = document.getElementById('popup-form-view');
-    const successView = document.getElementById('popup-success-view');
-    const downloadMsg = document.getElementById('popup-download-message');
-
-    // Swap modal contents to success view
-    if (formView) {
-      formView.classList.remove('block');
-      formView.classList.add('hidden');
-    }
-    if (successView) {
-      successView.classList.remove('hidden');
-      successView.classList.add('block');
-    }
-
-    // Force show popup modal (necessary for bottom form submissions too)
-    if (popupOverlay) {
-      popupOverlay.classList.add('show');
-    }
-
-    // If brochure is requested, trigger background file download
     if (isBrochureDownload) {
-      if (downloadMsg) {
-        downloadMsg.classList.remove('hidden');
-        downloadMsg.classList.add('block');
-      }
-      setTimeout(() => {
-        const link = document.createElement('a');
-        link.href = 'UGBIP-Brochures.pdf';
-        link.download = 'UGBIP_Brochures.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      }, 1000);
+      window.location.href = 'thank-you.html?download=true';
+    } else {
+      window.location.href = 'thank-you.html';
     }
-
-    // Reset input fields and button state for all forms
-    document.querySelectorAll('form').forEach(form => {
-      form.reset();
-      const submitBtn = form.querySelector('button[type="submit"]');
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.style.backgroundColor = '';
-        if (submitBtn.id === 'lead-popup-submit-btn') {
-          submitBtn.textContent = currentIntent === 'brochure' ? 'Download Brochure' : 'Talk To Our Team';
-        } else {
-          submitBtn.textContent = 'Talk To Our Team';
-        }
-      }
-    });
-
-    // Automatically close the popup after 3 seconds (3000ms)
-    setTimeout(() => {
-      closePopup();
-    }, 3000);
   }
 
   // Bind forms
