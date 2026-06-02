@@ -454,6 +454,38 @@ function init() {
     });
   }
 
+
+
+    // ─── Auto-scroll for Management Challenges Carousel ───────────────────────
+    const projectsCarousel = document.getElementById('projects-carousel');
+    if (projectsCarousel) {
+        let scrollInterval;
+        const scrollStep = 300; // Approximate width of one card
+        const delay = 3000; // 3 seconds
+
+        const startAutoScroll = () => {
+            scrollInterval = setInterval(() => {
+                // If reached the end, scroll back to start
+                if (projectsCarousel.scrollLeft + projectsCarousel.clientWidth >= projectsCarousel.scrollWidth - 10) {
+                    projectsCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    projectsCarousel.scrollBy({ left: scrollStep, behavior: 'smooth' });
+                }
+            }, delay);
+        };
+
+        const stopAutoScroll = () => clearInterval(scrollInterval);
+
+        // Start scrolling initially
+        startAutoScroll();
+
+        // Pause on hover or touch
+        projectsCarousel.addEventListener('mouseenter', stopAutoScroll);
+        projectsCarousel.addEventListener('mouseleave', startAutoScroll);
+        projectsCarousel.addEventListener('touchstart', stopAutoScroll);
+        projectsCarousel.addEventListener('touchend', startAutoScroll);
+    }
+
   const sectionForm = document.querySelector('#apply-now-section form');
   if (sectionForm) {
     sectionForm.addEventListener('submit', (e) => {
