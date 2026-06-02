@@ -10,6 +10,7 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
     "@vitejs/plugin-legacy": "^6.1.1",
     "autoprefixer": "^10.5.0",
     "postcss": "^8.5.15",
