@@ -109,7 +109,7 @@ function init() {
   // 4. Click 'Deploy' -> 'New Deployment' -> Select 'Web App'.
   // 5. Set 'Execute as' to 'Me', and 'Who has access' to 'Anyone'.
   // 6. Deploy and copy the Web App URL, then paste it below:
-  const GOOGLE_SHEET_URL = ''; // TODO: Paste your new Google Apps Script Web App URL here
+  const GOOGLE_SHEET_URL = 'https://script.google.com/macros/s/AKfycbyAOac3M6BxktHQgBX96oLM_Pv2KCs5wp4CShDDqyUwCNpHEPNUbI3930j1IA_nP-jemg/exec'; // Web App from Aimerlanding
 
   // ─── UTM Tracking ─────────────────────────────────────────────────────────
   const urlParams = new URLSearchParams(window.location.search);
@@ -340,7 +340,8 @@ function init() {
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name, phone, email, state, status, goal, utmSource, utmMedium, utmCampaign
+          name, phone, email, state, status, goal, utmSource, utmMedium, utmCampaign,
+          landingPage: 'ugprogram' // Extra tag for this project
         })
       }).catch(err => console.error('Google Sheets Submission Error:', err));
     } else {
