@@ -1,14 +1,13 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/ugprogram/',
+  base: './',
   server: {
     port: 3000,
     host: '0.0.0.0',
     hmr: true,
   },
   build: {
-    outDir: 'dist/ugprogram',
     // Inline small assets (< 8KB) as base64 to reduce HTTP requests
     assetsInlineLimit: 8192,
     // Minify HTML/JS output
