@@ -86,7 +86,7 @@ function init() {
   // INSTRUCTIONS TO CREATE A NEW SHEET:
   // 1. Create a new Google Sheet.
   // 2. Go to Extensions -> Apps Script.
-  // 3. Paste the following Google Apps Script:
+  // Paste the following Google Apps Script:
   /*
       function doPost(e) {
         var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
@@ -101,7 +101,9 @@ function init() {
           data.goal,
           data.utmSource,
           data.utmMedium,
-          data.utmCampaign
+          data.utmCampaign,
+          data.utmTerm,
+          data.utmContent
         ]);
         return ContentService.createTextOutput(JSON.stringify({result: "success"})).setMimeType(ContentService.MimeType.JSON);
       }
@@ -116,6 +118,8 @@ function init() {
   const utmSource   = urlParams.get('utm_source')   || '';
   const utmMedium   = urlParams.get('utm_medium')   || '';
   const utmCampaign = urlParams.get('utm_campaign') || '';
+  const utmTerm     = urlParams.get('utm_term')     || '';
+  const utmContent  = urlParams.get('utm_content')  || '';
 
   // ─── Lead Form Popup Logic ───────────────────────────────────────────────
   const popupOverlay = document.getElementById('lead-popup-overlay');
@@ -324,9 +328,11 @@ function init() {
       { Attribute: 'Source',           Value: 'UGBIP Landing Page' },
     ];
 
-    if (utmSource)   payload.push({ Attribute: 'SourceContent',  Value: utmSource });
-    if (utmMedium)   payload.push({ Attribute: 'SourceMedium',   Value: utmMedium });
-    if (utmCampaign) payload.push({ Attribute: 'SourceCampaign', Value: utmCampaign });
+    if (utmSource)   payload.push({ Attribute: 'mx_utm_source',   Value: utmSource });
+    if (utmMedium)   payload.push({ Attribute: 'mx_utm_medium',   Value: utmMedium });
+    if (utmCampaign) payload.push({ Attribute: 'mx_utm_campaign', Value: utmCampaign });
+    if (utmTerm)     payload.push({ Attribute: 'mx_utm_term',     Value: utmTerm });
+    if (utmContent)  payload.push({ Attribute: 'mx_utm_content',  Value: utmContent });
 
     // Loading State
     const originalText = btnEl.textContent;
@@ -341,6 +347,7 @@ function init() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name, phone, email, state, status, goal, utmSource, utmMedium, utmCampaign,
+          utmTerm, utmContent,
           landingPage: 'ugprogram' // Extra tag for this project
         })
       }).catch(err => console.error('Google Sheets Submission Error:', err));
