@@ -251,6 +251,22 @@ function init() {
     });
   }
 
+  function cleanPhone(phone) {
+    let hasPlus = phone.trim().startsWith('+');
+    let cleaned = phone.replace(/\D/g, '');
+    
+    // Normalize Indian numbers (12 digits starting with 91 or 11 digits starting with 0)
+    if (cleaned.length === 12 && cleaned.startsWith('91')) {
+      cleaned = cleaned.substring(2);
+      hasPlus = false;
+    } else if (cleaned.length === 11 && cleaned.startsWith('0')) {
+      cleaned = cleaned.substring(1);
+      hasPlus = false;
+    }
+    
+    return (hasPlus ? '+' : '') + cleaned;
+  }
+
   // ─── Lead Submission API Call ─────────────────────────────────────────────
   async function submitLead(formEl, btnEl, isBrochureDownload = false) {
     const nameInput = formEl.querySelector('#name') || formEl.querySelector('[name="name"]');
@@ -262,7 +278,7 @@ function init() {
 
     const name = nameInput ? nameInput.value.trim() : '';
     const email = emailInput ? emailInput.value.trim() : '';
-    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const rawPhone = phoneInput ? phoneInput.value.trim() : '';
     const state = stateInput ? stateInput.value : '';
     const status = statusInput ? statusInput.value : '';
     let goal = goalInput ? goalInput.value : '';
@@ -290,15 +306,17 @@ function init() {
     } else if (!/^\S+@\S+\.\S+$/.test(email)) {
       showError(emailInput, 'Please enter a valid email address');
     }
-    if (!phone) {
+    if (!rawPhone) {
       showError(phoneInput, 'Phone number is required');
-    } else if (!/^\+?[\d\s-]{10,}$/.test(phone)) {
+    } else if (!/^\+?[\d\s-]{10,}$/.test(rawPhone)) {
       showError(phoneInput, 'Please enter a valid phone number (min 10 digits)');
     }
     if (!state) showError(stateInput, 'Please select your state');
     if (!status) showError(statusInput, 'Please select your status');
 
     if (hasErrors) return;
+
+    const phone = cleanPhone(rawPhone);
 
     // Expand short goal value to full text description
     const goalMapping = {
