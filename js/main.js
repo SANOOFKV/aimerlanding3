@@ -418,6 +418,10 @@ function init() {
   }
 
   function handleSuccess(isBrochureDownload) {
+    // ─── Meta Pixel: Fire Lead event on successful form submission ─────────
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+    }
     if (isBrochureDownload) {
       window.location.href = 'thank-you.html?download=true';
     } else {
