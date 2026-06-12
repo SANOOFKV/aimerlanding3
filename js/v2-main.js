@@ -418,9 +418,10 @@ function init() {
   }
 
   function handleSuccess(isBrochureDownload) {
-    // ─── Meta Pixel: Fire Lead event on successful form submission ─────────
+    // ─── Meta Pixel: Fire Lead + lead_status events on successful form submission ───
     if (typeof fbq === 'function') {
       fbq('track', 'Lead');
+      fbq('trackCustom', 'lead_status');
     }
     if (isBrochureDownload) {
       window.location.href = 'v2-thank-you.html?download=true';
