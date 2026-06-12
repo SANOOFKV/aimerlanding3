@@ -203,11 +203,11 @@ function init() {
   function openPopup(intent) {
     currentIntent = intent;
     if (intent === 'brochure') {
-      if (popupTitle) popupTitle.textContent = 'Download Brochure';
-      if (popupSubmitBtn) popupSubmitBtn.textContent = 'Download Brochure';
+      if (popupTitle) popupTitle.textContent = 'Get Brochure';
+      if (popupSubmitBtn) popupSubmitBtn.textContent = 'Get Brochure';
     } else {
       if (popupTitle) popupTitle.textContent = 'Take the next step';
-      if (popupSubmitBtn) popupSubmitBtn.textContent = 'Talk To Our Team';
+      if (popupSubmitBtn) popupSubmitBtn.textContent = 'Talk To Team';
     }
     
     if (popupOverlay) {
