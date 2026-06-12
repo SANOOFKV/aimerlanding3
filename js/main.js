@@ -361,6 +361,12 @@ function init() {
     btnEl.textContent = 'Submitting…';
     btnEl.disabled = true;
 
+    // ─── Meta Pixel: Fire Lead event immediately after validation ──────────────
+    // Fires independently of LeadSquared API success/failure
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead');
+    }
+
     // Send payload to Google Sheets (Non-blocking)
     if (GOOGLE_SHEET_URL) {
       fetch(GOOGLE_SHEET_URL, {
@@ -422,10 +428,6 @@ function init() {
   }
 
   function handleSuccess(isBrochureDownload) {
-    // ─── Meta Pixel: Fire Lead event on successful form submission ──────────────
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
-    }
     if (isBrochureDownload) {
       window.location.href = 'thank-you.html?download=true';
     } else {
