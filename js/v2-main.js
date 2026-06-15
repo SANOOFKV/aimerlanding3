@@ -1,4 +1,45 @@
 function init() {
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // META PIXEL — Centralized Event Tracker
+  // LeadSquared has NO connection to pixel. All events managed here only.
+  // ═══════════════════════════════════════════════════════════════════════════
+  const Pixel = {
+    _fire(type, event, params) {
+      if (typeof fbq !== 'function') return;
+      fbq(type, event, params);
+    },
+    // Page load — fired in v2.html <head> as PageView
+    // CTA button clicked → popup opens
+    initiateCheckout() { this._fire('track', 'InitiateCheckout'); },
+    // Form validation passed → lead submitted (fires before CRM call)
+    lead()             { this._fire('track', 'Lead'); },
+    // Key section scrolled into view (fires once per section)
+    viewContent(name)  { this._fire('track', 'ViewContent', { content_name: name }); },
+  };
+
+  // ─── ViewContent: track key sections when scrolled into view ─────────────
+  const sectionsToTrack = [
+    { id: 'outcomes',   name: 'Outcomes'   },
+    { id: 'curriculum', name: 'Curriculum' },
+    { id: 'faculty',    name: 'Faculty'    },
+    { id: 'campus',     name: 'Campus'     },
+    { id: 'immersion',  name: 'Immersion'  },
+  ];
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        Pixel.viewContent(entry.target.dataset.pixelSection);
+        sectionObserver.unobserve(entry.target); // fire only once per section
+      }
+    });
+  }, { threshold: 0.3 });
+  sectionsToTrack.forEach(({ id, name }) => {
+    const el = document.getElementById(id);
+    if (el) { el.dataset.pixelSection = name; sectionObserver.observe(el); }
+  });
+  // ─────────────────────────────────────────────────────────────────────────────
+
   // Initialize Lucide icons (deferred load — retry until available)
   function initLucide() {
     if (window.lucide) {
@@ -197,9 +238,7 @@ function init() {
       e.preventDefault();
       const intent = button.getAttribute('data-intent') || 'apply';
       // Meta Pixel: user showed intent by opening the lead form
-      if (typeof fbq === 'function') {
-        fbq('track', 'InitiateCheckout');
-      }
+      Pixel.initiateCheckout();
       openPopup(intent);
     });
   });
@@ -363,9 +402,7 @@ function init() {
 
     // ─── Meta Pixel: Fire Lead event immediately after validation ──────────────
     // Fires independently of LeadSquared API success/failure
-    if (typeof fbq === 'function') {
-      fbq('track', 'Lead');
-    }
+    Pixel.lead();
 
     // Send payload to Google Sheets (Non-blocking)
     if (GOOGLE_SHEET_URL) {

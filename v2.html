@@ -101,23 +101,23 @@
   <!-- Add js-enabled class to prevent invisible content if scripts block -->
   <script>document.documentElement.classList.add('js-enabled');</script>
 
-  <!-- Meta Pixel Code -->
+  <!-- ═══ Meta Pixel ═══════════════════════════════════════════════════════ -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    !function(f,b,e,v,n,t,s){
+      if(f.fbq)return;n=f.fbq=function(){
+        n.callMethod ? n.callMethod.apply(n,arguments) : n.queue.push(arguments)
       };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)
+    }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '26459103610459072');
     fbq('track', 'PageView');
+    // All other events (ViewContent, InitiateCheckout, Lead) are
+    // managed centrally in js/v2-main.js via the Pixel module.
   </script>
-  <!-- End Meta Pixel Code -->
+  <!-- ═══ End Meta Pixel ═══════════════════════════════════════════════════ -->
 </head>
 
 <body class="bg-background text-text-dark font-sans antialiased min-h-screen">
