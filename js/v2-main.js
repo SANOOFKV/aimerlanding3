@@ -12,8 +12,6 @@ function init() {
     // Page load — fired in v2.html <head> as PageView
     // CTA button clicked → popup opens
     initiateCheckout() { this._fire('track', 'InitiateCheckout'); },
-    // Form validation passed → lead submitted (fires before CRM call)
-    lead()             { this._fire('track', 'Lead'); },
     // Key section scrolled into view (fires once per section)
     viewContent(name)  { this._fire('track', 'ViewContent', { content_name: name }); },
   };
@@ -399,10 +397,6 @@ function init() {
     const originalText = btnEl.textContent;
     btnEl.textContent = 'Submitting…';
     btnEl.disabled = true;
-
-    // ─── Meta Pixel: Fire Lead event immediately after validation ──────────────
-    // Fires independently of LeadSquared API success/failure
-    Pixel.lead();
 
     // Send payload to Google Sheets (Non-blocking)
     if (GOOGLE_SHEET_URL) {
