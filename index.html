@@ -94,7 +94,7 @@
   <!-- Add js-enabled class to prevent invisible content if scripts block -->
   <script>document.documentElement.classList.add('js-enabled');</script>
 
-  <!-- Meta Pixel Code -->
+  <!-- ═══ Meta Pixel ═══════════════════════════════════════════════════════ -->
   <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -104,15 +104,17 @@
   t.src=v;s=b.getElementsByTagName(e)[0];
   s.parentNode.insertBefore(t,s)}(window, document,'script',
   'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '26459103610459072');
+  fbq('init', '874529725113957');
   fbq('track', 'PageView');
+  // All other events (ViewContent, InitiateCheckout, Lead) are
+  // managed centrally in js/main.js via the Pixel module.
   </script>
-  <!-- End Meta Pixel Code -->
+  <!-- ═══ End Meta Pixel ═══════════════════════════════════════════════════ -->
 </head>
 <body class="bg-background text-text-dark font-sans antialiased min-h-screen">
   <!-- Meta Pixel Code (Noscript Fallback) -->
   <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=26459103610459072&ev=PageView&noscript=1"
+  src="https://www.facebook.com/tr?id=874529725113957&ev=PageView&noscript=1"
   /></noscript>
 
   <!-- Header Navigation -->
