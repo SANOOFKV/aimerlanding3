@@ -41,34 +41,12 @@
   <!-- Preload critical hero video -->
   <link rel="preload" as="video" href="assets/videos/hero/banner-video.mp4" type="video/mp4">
   
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"/>
+  <!-- Theme Color (mobile browser UI) -->
+  <meta name="theme-color" content="#008BA5">
   
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            background: '#FFFFFF',
-            primary: '#008BA5',
-            accent: '#CEF3E4',
-            'text-dark': '#101A23',
-            'card-bg': '#F8FAFC',
-            'dark-teal': '#004D5B',
-            'dark-navy': '#101A23',
-            'light-grey': '#F1F5F9',
-            'light-teal': '#E6F4F6',
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
+  <!-- CSS (Tailwind CLI build + custom styles) -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" media="print" onload="this.media='all'"/>
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@0.460.0" defer></script>
@@ -193,14 +171,7 @@
           <div class="absolute inset-0 bg-primary/20 blur-[100px] -z-10 mix-blend-multiply pointer-events-none"></div>
           <!-- Inner Video Player -->
           <div class="w-full h-full rounded-xl overflow-hidden bg-white relative">
-            <video 
-              autoplay 
-              loop 
-              muted 
-              playsinline
-              preload="auto"
-              class="w-full h-full object-cover object-center"
-            >
+            <video autoplay loop muted playsinline preload="metadata" class="w-full h-full object-cover object-center">
               <source src="assets/videos/hero/banner-video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -490,15 +461,8 @@
           </button>
         </div>
         <div class="border border-slate-200 rounded-xl overflow-hidden aspect-video md:aspect-[4/3] bg-slate-50 relative">
-          <video 
-            autoplay 
-            loop 
-            muted 
-            playsinline
-            preload="metadata"
-            class="w-full h-full object-cover"
-          >
-            <source src="assets/videos/curriculum/curriculum-video.mp4" type="video/mp4">
+          <video id="curriculum-video" muted playsinline preload="none" loop class="w-full h-full object-cover" poster="assets/images/campus-life/flex1-1-1.jpg">
+            <source data-src="assets/videos/curriculum/curriculum-video.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <div class="absolute inset-0 bg-primary/10 mix-blend-multiply pointer-events-none"></div>

@@ -254,17 +254,11 @@ function init() {
     if (popupOverlay) {
       popupOverlay.classList.add('show');
     }
-    // Hide sticky mobile CTA when popup is open
-    const stickyCta = document.getElementById('sticky-mobile-cta');
-    if (stickyCta) stickyCta.style.display = 'none';
   }
 
   function closePopup() {
     if (popupOverlay) {
       popupOverlay.classList.remove('show');
-      // Restore sticky mobile CTA when popup closes
-      const stickyCta = document.getElementById('sticky-mobile-cta');
-      if (stickyCta) stickyCta.style.display = '';
       // Reset success view back to form input view after transition ends
       setTimeout(() => {
         const formView = document.getElementById('popup-form-view');
