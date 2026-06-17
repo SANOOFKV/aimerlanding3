@@ -182,9 +182,9 @@ function init() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        // Auto-show popup on scroll (once per session, after 10% scroll depth)
+        // Auto-show popup on scroll (once per session, after 40% scroll depth)
         const scrollDepth = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        if (scrollDepth > 0.1 && !popupShown) {
+        if (scrollDepth > 0.4 && !popupShown) {
           popupShown = true;
           openPopup('apply');
         }
@@ -254,11 +254,17 @@ function init() {
     if (popupOverlay) {
       popupOverlay.classList.add('show');
     }
+    // Hide sticky mobile CTA when popup is open
+    const stickyCta = document.getElementById('sticky-mobile-cta');
+    if (stickyCta) stickyCta.style.display = 'none';
   }
 
   function closePopup() {
     if (popupOverlay) {
       popupOverlay.classList.remove('show');
+      // Restore sticky mobile CTA when popup closes
+      const stickyCta = document.getElementById('sticky-mobile-cta');
+      if (stickyCta) stickyCta.style.display = '';
       // Reset success view back to form input view after transition ends
       setTimeout(() => {
         const formView = document.getElementById('popup-form-view');
@@ -506,6 +512,25 @@ function init() {
         projectsCarousel.addEventListener('touchstart', stopAutoScroll);
         projectsCarousel.addEventListener('touchend', startAutoScroll);
     }
+
+  // ─── Curriculum Video Lazy-Load (IntersectionObserver) ─────────────────
+  const curriculumVideo = document.getElementById('curriculum-video');
+  if (curriculumVideo) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const source = curriculumVideo.querySelector('source[data-src]');
+          if (source && !source.src) {
+            source.src = source.dataset.src;
+            curriculumVideo.load();
+            curriculumVideo.play().catch(() => {});
+          }
+          videoObserver.unobserve(curriculumVideo);
+        }
+      });
+    }, { threshold: 0.1 });
+    videoObserver.observe(curriculumVideo);
+  }
 
   const sectionForm = document.querySelector('#apply-now-section form');
   if (sectionForm) {
