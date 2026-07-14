@@ -166,6 +166,7 @@ function init() {
   
   let popupShown = false;
   let currentIntent = 'apply'; // 'apply' or 'brochure'
+  let formStarted = false; // For abandonment tracking
 
   // Consolidated scroll handler (single listener for popup + back-to-top + scroll-spy)
   const backToTopBtn = document.getElementById('back-to-top-btn');
@@ -180,9 +181,9 @@ function init() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        // Auto-show popup on scroll (once per session, after 40% scroll depth)
+        // Auto-show popup on scroll (once per session, after 10% scroll depth)
         const scrollDepth = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        if (scrollDepth > 0.4 && !popupShown) {
+        if (scrollDepth > 0.1 && !popupShown) {
           popupShown = true;
           openPopup('apply');
         }
@@ -257,6 +258,13 @@ function init() {
   function closePopup() {
     if (popupOverlay) {
       popupOverlay.classList.remove('show');
+      
+      // Form Abandonment tracking
+      if (formStarted) {
+        Pixel._fire('trackCustom', 'FormAbandoned', { intent: currentIntent });
+        formStarted = false; // Reset
+      }
+
       // Reset success view back to form input view after transition ends
       setTimeout(() => {
         const formView = document.getElementById('popup-form-view');
@@ -467,6 +475,9 @@ function init() {
   // Bind forms
   const popupForm = document.querySelector('#lead-popup-box form');
   if (popupForm) {
+    // Track when user starts typing for abandonment tracking
+    popupForm.addEventListener('input', () => { formStarted = true; });
+
     popupForm.addEventListener('submit', (e) => {
       e.preventDefault();
       submitLead(popupForm, popupForm.querySelector('button[type="submit"]'), currentIntent === 'brochure');
