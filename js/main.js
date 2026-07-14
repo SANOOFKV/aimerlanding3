@@ -180,9 +180,9 @@ function init() {
     if (!ticking) {
       requestAnimationFrame(() => {
         const scrollY = window.scrollY;
-        // Auto-show popup on scroll (once per session, after 5% scroll depth)
+        // Auto-show popup on scroll (once per session, after 15% scroll depth)
         const scrollDepth = scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-        if (scrollDepth > 0.05 && !popupShown) {
+        if (scrollDepth > 0.15 && !popupShown) {
           popupShown = true;
           openPopup('apply');
         }
