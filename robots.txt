@@ -3,4 +3,4 @@ Allow: /
 Disallow: /dist/
 Disallow: /node_modules/
 
-Sitemap: https://aimerbschool.com/sitemap.xml
+Sitemap: https://ugprogram.aimerbschool.com/sitemap.xml

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
   <title>Thank You - AIMER Business School</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,8 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-16883887094');
+    // Google Ads Conversion Tracking (Placeholder label)
+    gtag('event', 'conversion', {'send_to': 'AW-16883887094/REPLACE_WITH_CONVERSION_LABEL'});
   </script>
   <!-- Microsoft Clarity -->
   <script type="text/javascript">
@@ -37,7 +40,11 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '874529725113957');
   fbq('track', 'PageView');
-  fbq('track', 'Lead'); // Lead event fired on thank you page
+
+  // Dynamic Lead Event
+  const p = new URLSearchParams(window.location.search);
+  const leadIntent = p.get('download') === 'true' ? 'Brochure' : 'Apply';
+  fbq('track', 'Lead', { content_name: leadIntent });
   </script>
   <!-- ═══ End Meta Pixel ═══════════════════════════════════════════════════ -->
 </head>
@@ -51,7 +58,7 @@
   <header class="bg-background/90 backdrop-blur-md text-white border-b border-white/10 w-full">
     <div class="flex justify-between items-center max-w-[1280px] mx-auto px-6 py-4">
       <div class="flex items-center gap-2">
-        <img src="https://aimerbschool.com/wp-content/uploads/2026/04/AIMER-New-Logo-1-1-1.svg" alt="AIMER Business School" class="h-8" />
+        <img src="assets/images/logo/AIMER-New-Logo-1-1-1.svg" alt="AIMER Business School" class="h-8" />
       </div>
     </div>
   </header>
