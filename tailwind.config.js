@@ -2,9 +2,7 @@
 export default {
   content: [
     './index.html',
-    './v2.html',
     './thank-you.html',
-    './v2-thank-you.html',
     './js/**/*.js',
   ],
   theme: {

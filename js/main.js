@@ -9,7 +9,7 @@ function init() {
       if (typeof fbq !== 'function') return;
       fbq(type, event, params);
     },
-    // Page load — fired in v2.html <head> as PageView
+    // Page load — fired in index.html <head> as PageView
     // CTA button clicked → popup opens
     initiateCheckout() { this._fire('track', 'InitiateCheckout'); },
     // Key section scrolled into view (fires once per section)

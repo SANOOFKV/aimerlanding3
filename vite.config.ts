@@ -34,8 +34,6 @@ export default defineConfig({
       input: {
         main: 'index.html',
         thankYou: 'thank-you.html',
-        v2: 'v2.html',
-        v2ThankYou: 'v2-thank-you.html'
       },
       output: {
         assetFileNames: 'assets/[name]-[hash][extname]',
